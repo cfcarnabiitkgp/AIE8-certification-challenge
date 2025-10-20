@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+---
+- Structure: /app with /routers, /services, /models, /agents
+- Use FastAPI's dependency injection for database and services
+- Implement WebSocket endpoints for streaming LLM responses
+- Use Pydantic v2 for request/response validation
+- Create LangGraph graphs for agent workflows
+- Implement proper RAG pipeline: embedding → vector store → retrieval → generation
+- Use async database operations when appropriate
+- Use Qdrant for vector database
+- Add middleware for CORS, authentication, rate limiting
+- Write Python code that follows OOP conventions and is easy to debug
+- Implement tool schemas with proper input validation

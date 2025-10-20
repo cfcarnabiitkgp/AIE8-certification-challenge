@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+### Rules for Frontend
+
+- You must pay attention to visual clarity and contrast. Do not place white text on a white background.
+- You must ensure the UX is pleasant. Boxes should grow to fit their contents, etc. 
+- When asking the user for sensitive information - you must use password style text-entry boxes in the UI.
+- You should use Next.js and React while building blocks for the front end UI. 
+- Ensure that this frontend can be tested locally.
+- Always provide users with an easy way to run and test the created UI once you generated.

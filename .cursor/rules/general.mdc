@@ -1,0 +1,14 @@
+---
+alwaysApply: true
+---
+- Use different folders to keep the frontend and backend source code separate
+- Use async/await patterns where needed and beneficial for effeciency reasons
+- Implement proper error handling like high-grade production level Python code
+- Use environment variables for all API keys and configs
+- Use Pydantic v2 and its BaseSettings class to manage application configurations
+- Configuration data should not be committed to git unless otherwise forced by user
+- Follow consistent naming: camelCase (TS), snake_case (Python) and follow good PEP conventions
+- Add type hints in Python
+- Keep components/functions small and single-purpose (separation of responsibility)
+- Use docstrings for python and class definitions and follow PEP 8 conventions
+- Use Python classes and OOP design principles when appropriate  
