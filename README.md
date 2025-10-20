@@ -85,7 +85,7 @@ AIE8-certification-challenge/
 │   │   └── main.py              # FastAPI application entry
 │   ├── .env.example             # Environment variables template
 │   ├── pyproject.toml           # Python project config (uv)
-│   ├── requirements.txt         # Python dependencies
+│   ├── uv.lock                  # UV lock file for dependencies
 │   ├── run.sh                   # Backend startup script
 │   ├── test_modular.py          # Test script for simple controller
 │   └── test_langgraph.py        # Test script for LangGraph workflow
@@ -148,11 +148,24 @@ Or use [Qdrant Cloud](https://cloud.qdrant.io/) and update the configuration acc
 
 #### Install Python Dependencies
 
+**Using uv (recommended):**
+```bash
+cd backend
+# Install uv if not already installed
+curl -LsSf https://astral.sh/uv/install.sh | sh  # or: brew install uv
+
+# Create virtual environment and install dependencies
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv pip install -e .
+```
+
+**Or using traditional pip:**
 ```bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install -e .
 ```
 
 #### Configure Environment Variables

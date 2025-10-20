@@ -1,9 +1,11 @@
 # Backend
 backend/venv
+backend/.venv
 backend/__pycache__
 backend/.env
 backend/*.pyc
 backend/.pytest_cache
+backend/.ruff_cache
 
 # Frontend
 frontend/node_modules
