@@ -1,0 +1,593 @@
+[
+  {
+    "reference_question": "In our study, we applied a logistic regression model to predict the likelihood of disease presence based on patient demographic data. The model was trained on a dataset comprising 500 samples, achieving an accuracy of 85%. These results highlight the model's potential utility in predictive diagnostics.",
+    "reference_context": "Mathematical Writing\u2014Issues of technical writing and the effective presentation of mathematics and computer science. Preparation of theses, papers, books, and 'literate' computer programs.",
+    "reference_answer": "Include a discussion of baseline comparisons and statistical testing. Specifically: (1) Compare the logistic regression model's performance with other baseline models (e.g., decision tree, SVM), (2) Conduct statistical significance tests to validate the model's superior performance, (3) Report the p-values from these tests to support the claims of effectiveness. Example: 'Our model achieved 85% accuracy, significantly outperforming the decision tree baseline (80%, p < 0.05, McNemar's test).'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "statistics",
+    "section_type": "results",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_000",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our research, we employed a logistic regression model to evaluate the probability of disease presence using patient demographic and clinical data. Our model was developed on the well-known Framingham Heart Study dataset, consisting of 500 unique samples, and reached an accuracy of 85%. These findings underscore the potential applicability of our model in predictive health analytics.",
+    "reference_context": "Mathematical Writing\u2014Challenges in technical writing and effectively presenting mathematical and computational research. This includes the preparation of dissertations, research articles, monographs, and 'literate' programming projects.",
+    "reference_answer": "Incorporate a comparative analysis with baseline models and statistical validation. Specifically: (1) Benchmark the logistic regression model against other standard models such as decision trees and support vector machines, (2) Perform statistical significance testing to confirm the superior performance of the logistic regression model, (3) Present the p-values to substantiate our conclusions about the model's efficacy. For example: 'Our logistic regression model achieved an 85% accuracy, significantly surpassing the decision tree benchmark (achieving only 80% accuracy, p < 0.05, according to McNemar's test), thus demonstrating its robustness and reliability in predictive tasks.'",
+    "issue_type": "Comparative Analysis and Statistical Validation",
+    "severity": "Moderate",
+    "domain": "Mathematical and Computational Research",
+    "section_type": "Research Methodology",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_000",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "In our study, we applied a logistic regression model to predict the likelihood of disease presence based on patient demographic data. The model was trained on a dataset comprising 500 samples, achieving an accuracy of 85%. These results highlight the model's potential utility in predictive diagnostics.",
+    "answer": "Include a discussion of baseline comparisons and statistical testing. Specifically: (1) Compare the logistic regression model's performance with other baseline models (e.g., decision tree, SVM), (2) Conduct statistical significance tests to validate the model's superior performance, (3) Report the p-values from these tests to support the claims of effectiveness. Example: 'Our model achieved 85% accuracy, significantly outperforming the decision tree baseline (80%, p < 0.05, McNemar's test).'",
+    "reference_answer": {
+      "documented_improvements": [
+        {
+          "before": "Include a discussion of baseline comparisons and statistical testing.",
+          "after": "Add a detailed analysis of baseline comparison and statistical validation."
+        },
+        {
+          "before": "(1) Compare the logistic regression model's performance with other baseline models (e.g., decision tree, SVM),",
+          "after": "(1) Conduct a comparative study of the logistic regression model against baseline models such as decision tree and SVM, using metrics like accuracy, precision, recall, and F1-score to highlight differences explicitly."
+        },
+        {
+          "before": "(2) Conduct statistical significance tests to validate the model's superior performance,",
+          "after": "(2) Employ statistical significance tests such as McNemar's test for paired nominal data to substantiate the superior performance of the logistic regression model over baseline models."
+        },
+        {
+          "before": "(3) Report the p-values from these tests to support the claims of effectiveness.",
+          "after": "(3) Present the p-values obtained from statistical tests (e.g., a p-value of < 0.05 indicating statistical significance) to reinforce the effectiveness of the model claims."
+        },
+        {
+          "before": "Example: 'Our model achieved 85% accuracy, significantly outperforming the decision tree baseline (80%, p < 0.05, McNemar's test).'",
+          "after": "Example: 'Our logistic regression model achieved an accuracy of 85% compared to the decision tree's 80% and SVM's 82%. McNemar's test confirmed the statistical significance of the accuracy difference between the logistic regression model and decision tree (p = 0.03), as well as between logistic regression and SVM (p = 0.04).' This change reflects accurate comparisons and statistical validation."
+        }
+      ]
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_000",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "What improvements were observed when using demographic data in our logistic regression model for predicting disease presence?",
+    "Exposition": "Our study aimed to enhance predictive diagnostics by leveraging patient demographic information. We employed a logistic regression model trained on a robust dataset of 500 samples, achieving a notable accuracy of 85%. The demographic data included age, gender, and ethnicity, which are critical factors in understanding disease prevalence. These results underscore the model's potential in assisting clinicians with early diagnosis. However, it is crucial to validate these findings with a baseline model to truly assess the added value of demographic data. The promising accuracy highlights the importance of such models in healthcare, yet further research is needed to confirm their efficacy across diverse populations.",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_000",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "In our analysis, we employed a logistic regression model to estimate the probability of disease occurrence using patient demographic information. The model was developed on a dataset containing 500 instances, resulting in an impressive 85% accuracy rate. These findings underscore the potential of our approach in enhancing diagnostic predictions.",
+    "Issue": "vague_comparison",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_000",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We implemented a novel branch-and-bound algorithm to solve the capacitated vehicle routing problem (CVRP) on a set of benchmark instances. Our approach reduced the total distance traveled by 5% compared to the existing heuristic methods. The algorithm was tested on 10 CVRP instances from the well-known Solomon dataset.",
+    "reference_context": "Issues of technical writing and the effective presentation of mathematics and computer science.",
+    "reference_answer": "Include a comparison with baseline methods and report statistical significance. Specifically: (1) Clearly state which existing heuristic methods were used as baselines, (2) Run the algorithm over multiple trials to account for variability, (3) Perform statistical analyses such as ANOVA or t-tests to determine the significance of the improvements. Example: 'Our approach reduced the total distance traveled by 5% \u00b1 0.8% (mean \u00b1 std over 5 runs) compared to the Clarke-Wright savings algorithm baseline, with statistical significance confirmed via a paired t-test (p < 0.05).'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "operations_research",
+    "section_type": "results",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_001",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our study, we propose a new branch-and-bound algorithm designed to tackle the capacitated vehicle routing problem (CVRP), which we evaluated using a range of well-known benchmark instances. Notably, our algorithm achieved an average reduction in total distance traveled of 5.2% compared to standard heuristic methods. Our evaluation was conducted on 10 CVRP instances from the standard Solomon dataset.",
+    "reference_context": "The challenges of effective technical writing in the context of presenting mathematical and computer science research.",
+    "reference_answer": "To strengthen the validity of our claims, it is crucial to include a comprehensive comparison with existing baseline methods and ensure the reporting of statistical significance. Specifically: (1) Explicitly identify the heuristic methods used as baseline comparators, such as the Clarke-Wright savings algorithm or the Sweep algorithm, (2) Execute the proposed algorithm over several independent trials to control for stochastic variations, (3) Conduct formal statistical tests, such as ANOVA or paired t-tests, to substantiate the significance of the observed improvements. For instance: 'Our optimized approach achieved an average reduction in total distance traveled of 5.2% \u00b1 0.7% (mean \u00b1 standard deviation across 10 runs) when compared to the Clarke-Wright savings algorithm. The results were statistically significant, as confirmed by a paired t-test with p < 0.01.'",
+    "issue_type": "Lack of detailed comparative analysis with baselines",
+    "severity": "Moderate",
+    "domain": "Computer Science",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_001",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We implemented a novel branch-and-bound algorithm to solve the capacitated vehicle routing problem (CVRP) on a set of benchmark instances. Our approach reduced the total distance traveled by 5% compared to the existing heuristic methods. The algorithm was tested on 10 CVRP instances from the well-known Solomon dataset.",
+    "answer": "Include a comparison with baseline methods and report statistical significance. Specifically: (1) Clearly state which existing heuristic methods were used as baselines, (2) Run the algorithm over multiple trials to account for variability, (3) Perform statistical analyses such as ANOVA or t-tests to determine the significance of the improvements. Example: 'Our approach reduced the total distance traveled by 5% \u00b1 0.8% (mean \u00b1 std over 5 runs) compared to the Clarke-Wright savings algorithm baseline, with statistical significance confirmed via a paired t-test (p < 0.05).' Replace vague terms with precise ones: \u274c 'reduced distance by 5%' \u27a1\ufe0f \u2705 'achieved a 5% reduction in total distance traveled on average' and specify conditions: \u2705 'under standard 2-hour time constraints.' Specify datasets used: \u274c 'Solomon dataset' \u27a1\ufe0f \u2705 '10 benchmark instances from the Solomon 100-customer dataset.' Teaching: When discussing results, always quantify improvements and clarify the context, ensuring statistical validation is included to strengthen claims.",
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_001",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We implemented a novel branch-and-bound algorithm to solve the capacitated vehicle routing problem (CVRP) on a set of benchmark instances. Our approach reduced the total distance traveled by 5% compared to the existing heuristic methods. The algorithm was tested on 10 CVRP instances from the well-known Solomon dataset. The results demonstrate that our method is competitive and provides a promising alternative to traditional approaches. Notably, the computation time for our algorithm was significantly lower than other exact methods previously reported in the literature.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_001",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "Our newly developed branch-and-bound technique was applied to minimize the travel distances in the capacitated vehicle routing problem (CVRP), showing a 5% improvement over previous approaches. This was validated using 10 CVRP instances from the renowned Solomon dataset.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_001",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We implemented a novel transformer-based architecture and trained it on the CIFAR-10 dataset. The model achieved a test accuracy of 91.2%, which indicates superior performance over existing models. We utilized a learning rate of 0.001 and a batch size of 128.",
+    "reference_context": "We spent the rest of class continuing to examine the homework assignment. In the interest of succinct notes, I have replaced many literal phrases by their generic equivalents. For example, I might have replaced \u2018A > B\u2019 by \u2018\u27e8relation\u27e9\u2019. This time I have divided the comments into two sets: those dealing with what I will call \u201cform\u201d (parentheses, capitalization, fonts, etc.) and those dealing with \u201ccontent\u201d (wording, sentence construction, tense, etc.).",
+    "reference_answer": "Report hyperparameter tuning details and rationale. Specifically: (1) Describe the hyperparameter search strategy (e.g., grid search, random search, Bayesian optimization), (2) Provide a range or list of values tested for critical hyperparameters like learning rate and batch size, (3) Explain how the chosen hyperparameters were determined to be optimal. Example: 'We conducted a random search over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the combination that maximized validation accuracy.'",
+    "issue_type": "unreported_hyperparameters",
+    "severity": "warning",
+    "domain": "machine_learning",
+    "section_type": "methods",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_002",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "Our novel transformer-based model, trained on the CIFAR-10 dataset, achieved a test accuracy of 91.2%, surpassing existing architectures. The model utilized a learning rate of 0.001 and a batch size of 128.",
+    "reference_context": "During the class, we further explored the homework assignment. For brevity in our notes, many specific phrases have been replaced with generic terms. For instance, 'A > B' might be replaced by '\u27e8relation\u27e9'. The discussion was divided into two categories: comments on 'form' (punctuation, capitalization, etc.) and comments on 'content' (word choice, sentence structure, tense, etc.).",
+    "reference_answer": "Detail the hyperparameter tuning process and elaborate on the rationale. Specifically: (1) Outline the hyperparameter search methodology (e.g., grid search, random search, Bayesian optimization), (2) List or provide ranges for crucial hyperparameters like learning rate and batch size, (3) Justify how the selected hyperparameters were deemed optimal. For example, 'A random search was conducted over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the configuration that maximized validation accuracy.'",
+    "issue_type": "Content Omission",
+    "severity": "Moderate",
+    "domain": "Machine Learning",
+    "section_type": "Methods",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We implemented a novel transformer-based architecture and trained it on the CIFAR-10 dataset. The model achieved a test accuracy of 91.2%, which indicates superior performance over existing models. We utilized a learning rate of 0.001 and a batch size of 128.",
+    "reference_answer": {
+      "report_hyperparameter_tuning_details_and_rationale": {
+        "1": "Specify the hyperparameter search strategy used, such as grid search, random search, or Bayesian optimization. Clarify the method with precise terminology.",
+        "2": "Detail the range or discrete values of tested hyperparameters, particularly for pivotal ones like learning rate and batch size. Providing context for choices improves clarity.",
+        "3": "Articulate how you determined the optimal hyperparameters. Illustrate using the metric utilized to evaluate performance improvements, like validation accuracy.",
+        "examples": [
+          "\u274c Before: 'We conducted a random search over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the combination that maximized validation accuracy.'",
+          "\u2705 After: 'We employed a Bayesian optimization strategy, exploring a search space where the learning rate was varied across a logarithmic scale from 0.0001 to 0.01 and batch sizes from 32 to 256. The optimal hyperparameters, a learning rate of 0.001 and batch size of 128, were chosen based on achieving the highest validation accuracy of 92.5% after 50 epochs, compared to other configurations.'"
+        ],
+        "improvement_suggestions": [
+          "\u274c Before: 'Our approach showed better performance.'",
+          "\u2705 After: 'Our approach improved performance by achieving a test accuracy of 91.2%, compared to the baseline model's performance of 89.7%.'"
+        ]
+      }
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We implemented a novel transformer-based architecture and trained it on the CIFAR-10 dataset. Our approach integrates attention mechanisms to enhance feature extraction capabilities, leading to better generalization. The model achieved a test accuracy of 91.2%, which indicates superior performance over existing models. We utilized a learning rate of 0.001 and a batch size of 128. The model architecture was evaluated using cross-validation to ensure robustness. Additionally, data augmentation techniques were employed to improve the model's resilience to varying input conditions.",
+    "Issue": "unreported_hyperparameters",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We developed a unique transformer-inspired model that was assessed on CIFAR-10, showing a commendable test accuracy of 91.2%, generally considered superior to many existing counterparts. Our experiments were conducted with a carefully chosen learning rate, and we processed data batches effectively.",
+    "Issue": "unreported_hyperparameters",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We employed a linear programming approach to solve the supply chain optimization problem. The model was tested on a dataset comprising 1000 demand scenarios. We have: the results show a cost reduction of 15% compared to the previous year.",
+    "reference_context": "Don\u2019t overdo the use of colons. While the colon in \u2018De\ufb01ne it as follows:\u2019 is \ufb01ne, the one in \u2018We have: \u27e8formula\u27e9\u2019 should be omitted since the formula just completes the sentence.",
+    "reference_answer": "Remove the unnecessary colon after 'We have:'. The statement 'the results show a cost reduction of 15% compared to the previous year' should directly follow 'We have' without a colon, as it completes the sentence rather than introducing a separate element.",
+    "issue_type": "excessive_colon_use",
+    "severity": "info",
+    "domain": "operations_research",
+    "section_type": "results",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_003",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our study, a linear programming method was implemented to address the complexities of supply chain optimization. The model was rigorously evaluated using the 'Global Supply Chain Dataset 2021', consisting of 1,500 unique demand scenarios. Our findings indicate: a 18% reduction in operational costs relative to the fiscal year 2020.",
+    "reference_context": "Avoid excessive use of colons. The colon in 'Defined as follows:' is appropriate, while the one in 'Our findings indicate: \u27e8result\u27e9' should be omitted since the result completes the sentence and is not a separate element.",
+    "reference_answer": "Remove the unnecessary colon after 'Our findings indicate:'. The phrase 'a 18% reduction in operational costs relative to the fiscal year 2020' should follow 'Our findings indicate' directly, as it completes the sentence instead of introducing a new element.",
+    "issue_type": "Unnecessary Colon Usage",
+    "severity": "Minor",
+    "domain": "Academic Research",
+    "section_type": "Results",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_003",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We employed a linear programming approach to solve the supply chain optimization problem. The model was tested on a dataset comprising 1000 demand scenarios. We have: the results show a cost reduction of 15% compared to the previous year.",
+    "answer": "Remove the unnecessary colon after 'We have:'. The statement 'the results show a cost reduction of 15% compared to the previous year' should directly follow 'We have' without a colon, as it completes the sentence rather than introducing a separate element.",
+    "reference_answer": {
+      "\u274c Before": "We have: the results show a cost reduction of 15% compared to the previous year.",
+      "\u2705 After": "We have the results showing a cost reduction of 15% compared to the previous year.",
+      "Explanation": "The colon after 'We have:' is unnecessary and disrupts the flow of the sentence. In formal writing, it's important to maintain clear and direct sentence structures. Instead of using a colon, integrate the outcomes directly into the sentence. A colon is typically used to introduce lists, quotations, or explanations that are separate from the preceding clause. Here, the sentence is a continuation rather than an introduction to a new element.",
+      "Educational Insight": "When writing technical documents or reports, clarity and precision are key. Avoid unnecessary punctuation that can lead to confusion or disrupt sentence flow. Ensure that results and findings are seamlessly integrated into the narrative. For example, instead of using a colon inappropriately, use it to introduce a list, as in: 'The model was evaluated on several metrics: cost efficiency, speed, and reliability.'"
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_003",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "text": "We adopted an innovative linear programming approach to tackle the supply chain optimization problem. This method harnesses advanced computational techniques to efficiently allocate resources. The model was tested on a dataset comprising 1000 demand scenarios. We have: the results show a cost reduction of 15% compared to the previous year. This significant improvement highlights the potential of our approach to enhance operational efficiency in complex supply chains.",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_003",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We applied a linear programming technique for optimizing the supply chain. Upon evaluating the model, which was examined using a dataset with 1000 scenarios, the results indicate: a 15% cost reduction against last year's figures.",
+    "Issue": "borderline_excessive_colon_use",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_003",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "Our proposed algorithm was evaluated on the CIFAR-10 dataset. It achieved a classification accuracy of 85.7%, outperforming existing methods. The results clearly indicate the superiority of our approach.",
+    "reference_context": "Each part; and things should be explained twice (formally and informally). These two principles lead naturally to programs made up of modules that begin with text (informal explanation) and finish with Pascal (formal explanation).",
+    "reference_answer": "Provide a baseline comparison and detailed explanation. Specifically: (1) Compare the performance against established baseline models (e.g., ResNet, VGG) under the same conditions to support claims of superiority, (2) Describe the experimental setup and parameter configurations used, (3) Include visual aids such as confusion matrices or error bars to convey performance nuances. Example: 'Our algorithm achieved 85.7% accuracy, surpassing the ResNet-18 baseline (82.5%) and VGG-16 (83.2%) using the same training protocol. The experiments were conducted with a learning rate of 0.001 and batch size of 64, across 5 random seeds. Figure 2 shows the confusion matrix, highlighting improved performance on minority classes.'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "machine_learning",
+    "section_type": "results",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_004",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "We evaluated the effectiveness of our novel deep learning model on the well-known CIFAR-10 dataset, achieving a commendable classification accuracy of 86.2%. These promising results suggest that our approach holds distinct advantages over existing models.",
+    "reference_context": "In line with best practices, our methodology is described twice: an informal summary suitable for a broad audience, followed by a formal technical explanation. This dual-layered approach ensures clarity and rigor in presenting our modular program structure, starting with intuitive descriptions and concluding with precise algorithmic details in Python.",
+    "reference_answer": "For a comprehensive understanding, it is essential to establish a performance baseline by comparing against popular architectures like ResNet and VGG under identical experimental conditions. Specifically: (1) Provide a comparative performance analysis with standard models like ResNet-34 and VGG-19 to substantiate claims of superior performance, (2) Outline the experimental setup, detailing hyperparameters such as learning rate, batch size, and epochs, (3) Incorporate visual representations such as loss curves or ROC plots to illustrate model efficacy. For example: 'Our proposed model achieved a classification accuracy of 86.2%, outperforming the ResNet-34 baseline (83.7%) and VGG-19 (84.1%) under the same experimental setting. The experiments utilized a learning rate of 0.0005 and a batch size of 128, conducted over 100 epochs with 3 random seed variations. As depicted in Figure 3, the ROC curve demonstrates a clear enhancement in true positive rates, particularly for challenging classes.'",
+    "issue_type": "Missing Comparative Baseline",
+    "severity": "Moderate",
+    "domain": "Machine Learning Research",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_004",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "Our proposed algorithm was evaluated on the CIFAR-10 dataset. It achieved a classification accuracy of 85.7%, outperforming existing methods. The results clearly indicate the superiority of our approach.",
+    "reference_answer": {
+      "before": "Provide a baseline comparison and detailed explanation. Specifically: (1) Compare the performance against established baseline models (e.g., ResNet, VGG) under the same conditions to support claims of superiority, (2) Describe the experimental setup and parameter configurations used, (3) Include visual aids such as confusion matrices or error bars to convey performance nuances. Example: 'Our algorithm achieved 85.7% accuracy, surpassing the ResNet-18 baseline (82.5%) and VGG-16 (83.2%) using the same training protocol. The experiments were conducted with a learning rate of 0.001 and batch size of 64, across 5 random seeds. Figure 2 shows the confusion matrix, highlighting improved performance on minority classes.'",
+      "after": "Enhance the comparison and methodological transparency with precise details and metrics. Specifically: (1) Directly compare the performance against established baseline models such as ResNet-18 and VGG-16, using identical experimental setups, to substantiate claims of superiority with concrete numbers, (2) Thoroughly describe the experimental setup and parameter configurations, including exact hyperparameters, dataset preprocessing steps, and the rationale for chosen settings, (3) Utilize visual aids like confusion matrices, ROC curves, or error bars to illustrate performance nuances and variability. Example Improvement: 'Our novel algorithm achieved a classification accuracy of 85.7% on the CIFAR-10 dataset, outperforming the ResNet-18 baseline (82.5%) and VGG-16 baseline (83.2%) under identical conditions. We employed a learning rate of 0.001 and a batch size of 64, iteratively training across 5 random seeds to ensure robustness. The dataset was preprocessed with standard normalization techniques. Figure 2 provides a confusion matrix, which demonstrates our algorithm's improved classification performance on minority classes, particularly in reducing Type II errors. Additionally, error bars in Figure 3 show the standard deviation of accuracy across trials, highlighting our model's consistency.'"
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_004",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "Our proposed algorithm was evaluated on the CIFAR-10 dataset. It achieved a classification accuracy of 85.7%, outperforming existing methods. The results clearly indicate the superiority of our approach. Our model was trained using a standard backpropagation algorithm with a learning rate of 0.01 and batch size of 64, which were determined through extensive hyperparameter tuning. We also employed data augmentation techniques to improve the generalization capability of the model.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_004",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "In our study, we applied the novel algorithm to the CIFAR-10 dataset, resulting in a noticeable improvement in classification accuracy. The findings reveal the advantages of our method relative to other approaches.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_004",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We implemented a branch and bound algorithm to address the mixed-integer linear programming problem. The method was tested on a benchmark set of 50 instances, and our algorithm solved each instance to optimality within an average runtime of 30 seconds.",
+    "reference_context": "each part; and things should be explained twice (formally and informally). These two principles lead naturally to programs made up of modules that begin with text (informal explanation) and \ufb01nish with Pascal (formal explanation).",
+    "reference_answer": "Include a formal comparison with a baseline method and detailed runtime analysis. Specifically: (1) Compare against a standard solver such as CPLEX or Gurobi, reporting the average runtime and optimality gap for both methods, (2) Provide a breakdown of the runtime components (e.g., node processing time, branching decisions) to understand where improvements occur, (3) Discuss the computational complexity in theoretical terms, explaining the expected performance relative to problem size. Example: 'Our branch and bound algorithm achieved an average runtime of 30 seconds, compared to CPLEX's average of 45 seconds on the same instances, with both achieving optimal solutions.'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "operations_research",
+    "section_type": "experiments",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_005",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "Our study introduces an innovative branch and bound algorithm tailored for solving complex mixed-integer linear programming (MILP) problems. We rigorously evaluated its performance on a well-established dataset, MIPLIB 2017, consisting of 50 diverse instances. Remarkably, our algorithm consistently resolved each to optimality, clocking an average runtime of just 28 seconds.",
+    "reference_context": "Each segment of our work is meticulously structured, offering both a conceptual overview and a precise algorithmic description. This dual narrative ensures clarity and comprehensive understanding, beginning with intuitive explanations and culminating in formalized algorithmic expressions.",
+    "reference_answer": "To substantiate our claims, we conducted a comparative analysis against the prominent MILP solvers CPLEX and Gurobi. Our algorithm exhibited a significant performance edge, with an average runtime of 28 seconds versus CPLEX's 44 seconds and Gurobi's 42 seconds, with all solvers attaining optimality. Further, a detailed dissection of our algorithm's runtime revealed critical insights: node processing constituted 50% of the total time, while branching decisions accounted for 30%. This fine-grained analysis illuminates potential optimization vectors. Theoretically, our algorithm's computational complexity suggests a promising scalability trajectory, outperforming conventional methods as problem dimensions expand. For instance, on larger instances from the MIPLIB dataset, runtime efficiency was maintained without sacrificing solution quality. These findings underscore the algorithm's robustness and adaptability.",
+    "issue_type": "Lack of detailed and specific comparative analysis",
+    "severity": "Moderate",
+    "domain": "Operations Research",
+    "section_type": "Results",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_005",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We implemented a branch and bound algorithm to address the mixed-integer linear programming problem. The method was tested on a benchmark set of 50 instances, and our algorithm solved each instance to optimality within an average runtime of 30 seconds.",
+    "reference_answer": [
+      {
+        "suggestion": "Include a formal comparison with a baseline method and detailed runtime analysis.",
+        "before": "Include a formal comparison with a baseline method and detailed runtime analysis.",
+        "after": "Conduct a comprehensive analysis by comparing our algorithm with established solvers and providing an in-depth examination of runtime efficiency."
+      },
+      {
+        "suggestion": "Compare against a standard solver such as CPLEX or Gurobi, reporting the average runtime and optimality gap for both methods.",
+        "before": "Compare against a standard solver such as CPLEX or Gurobi, reporting the average runtime and optimality gap for both methods.",
+        "after": "Perform a comparison with a standard solver like CPLEX or Gurobi. Specifically, report the average runtime for each method and the optimality gap, if any. For example: 'Our branch and bound algorithm achieved an average runtime of 30 seconds with no optimality gap, compared to CPLEX's average runtime of 45 seconds on the same instances, achieving optimal solutions as well.'"
+      },
+      {
+        "suggestion": "Provide a breakdown of the runtime components (e.g., node processing time, branching decisions) to understand where improvements occur.",
+        "before": "Provide a breakdown of the runtime components (e.g., node processing time, branching decisions) to understand where improvements occur.",
+        "after": "Break down the runtime into key components such as node processing time and branching decisions. For instance, 'The average node processing time was reduced by 20% compared to the baseline solver, and our optimized branching decisions contributed to a 15% reduction in overall runtime.'"
+      },
+      {
+        "suggestion": "Discuss the computational complexity in theoretical terms, explaining the expected performance relative to problem size.",
+        "before": "Discuss the computational complexity in theoretical terms, explaining the expected performance relative to problem size.",
+        "after": "Analyze the computational complexity, detailing theoretical performance as the problem size scales. For example: 'The algorithm exhibits a computational complexity of O(n log n), where improvements in processing efficiency are noticeable as the instance size increases, maintaining performance advantages over traditional methods.'"
+      }
+    ],
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_005",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We have successfully implemented a branch and bound algorithm to address the mixed-integer linear programming problem. This approach is known for its efficiency in navigating large solution spaces while systematically narrowing down potential solutions. The method was tested on a benchmark set of 50 instances, and our algorithm solved each instance to optimality within an average runtime of 30 seconds. These results underscore the algorithm's robustness and potential applicability to real-world scenarios. However, a comparative baseline is missing, which makes it challenging to assess the relative performance improvements.",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_005",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "Our enhanced branch and bound technique was applied to a selection of mixed-integer linear programming problems. Tested on 50 instances from a recognized dataset, the method demonstrated an average solution time of around 30 seconds per problem.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_005",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "In our study, we implemented a new heuristic algorithm to solve the Traveling Salesman Problem (TSP). The algorithm was tested on a single benchmark instance from the TSPLIB library, and the results indicated a substantial reduction in computational time compared to the classic Genetic Algorithm approach.",
+    "reference_context": "The referee is conventionally regarded as a sort of \u201cexpert witness,\u201d whose task is to tell",
+    "reference_answer": "To improve rigor, include a comparison across multiple benchmark instances and report comprehensive performance metrics. Specifically: (1) Test the algorithm on a diverse set of instances from the TSPLIB library, (2) Provide average computational time and solution quality across all instances, (3) Include a baseline comparison with multiple established algorithms, (4) Conduct statistical analyses, such as ANOVA, to determine the significance of performance differences. Example: 'The new heuristic algorithm was evaluated on 10 different TSPLIB instances, achieving an average computational time of X seconds (\u00b1 Y std) and a mean solution quality of Z% deviation from the optimal, significantly outperforming the Genetic Algorithm (p < 0.05, ANOVA).'",
+    "issue_type": "insufficient_sample_size",
+    "severity": "warning",
+    "domain": "operations_research",
+    "section_type": "experiments",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_006",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our research, we developed a novel heuristic method to tackle the Traveling Salesman Problem (TSP), and we evaluated its performance using a benchmark instance from the TSPLIB95 dataset. The preliminary findings showed a marked improvement in computational efficiency when compared to the conventional Genetic Algorithm method.",
+    "reference_context": "In academic publishing, the referee often serves as an expert critic, whose responsibility is to provide constructive feedback.",
+    "reference_answer": "To enhance the scientific rigor of the study, it is recommended to perform a detailed evaluation across multiple benchmark instances and to present comprehensive performance data. Specifically: (1) Test the heuristic on a wide range of instances from the TSPLIB95 dataset, such as 'berlin52', 'pr76', and 'eil101', (2) Report average computational time and solution accuracy for each instance, (3) Compare the results with multiple well-established algorithms like Simulated Annealing and Ant Colony Optimization, (4) Apply statistical analyses, such as ANOVA, to ascertain the significance of observed differences. For instance: 'Our novel heuristic was tested on 15 TSPLIB95 instances, yielding an average computational time of 15.3 seconds (\u00b1 3.2 std) and a mean deviation of 1.5% from the best-known solutions. It significantly outperformed the Genetic Algorithm across all instances tested (p < 0.01, ANOVA).'",
+    "issue_type": "Insufficient benchmarking",
+    "severity": "Moderate",
+    "domain": "Computer Science",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_006",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "In our study, we implemented a new heuristic algorithm to solve the Traveling Salesman Problem (TSP). The algorithm was tested on a single benchmark instance from the TSPLIB library, and the results indicated a substantial reduction in computational time compared to the classic Genetic Algorithm approach.",
+    "answer": "To enhance scientific rigor and clarity, revise your reports to include comprehensive comparisons and detailed metrics. Specifically: (1) Test the algorithm on multiple, diverse instances from the TSPLIB library to ensure generalizability. \u274c Before: 'The algorithm was tested on a single benchmark instance.' \u2705 After: 'The algorithm was tested on a set of 10 diverse instances from the TSPLIB library, including instances such as berlin52, pr124, and rat195.' (2) Report average computational time and solution quality with precise statistics. \u274c Before: 'indicated a substantial reduction in computational time.' \u2705 After: 'achieved an average computational time of 25 seconds (\u00b13.2 seconds) across all instances and a mean solution quality of 1.5% deviation from the optimal solution.' (3) Include comparisons with multiple established algorithms, such as Ant Colony Optimization and Simulated Annealing, to provide context. \u274c Before: 'compared to the classic Genetic Algorithm approach.' \u2705 After: 'compared to multiple established algorithms, including Genetic Algorithm, Ant Colony Optimization, and Simulated Annealing.' (4) Conduct and report statistical analyses to validate significance. \u274c Before: 'results indicated a substantial reduction.' \u2705 After: 'The performance improvements were statistically significant, with a p-value of less than 0.05, as determined by ANOVA.' Example: 'The new heuristic algorithm was evaluated on instances such as berlin52 and pr124, achieving an average computational time of 25 seconds (\u00b13.2 seconds) and a solution quality deviation of 1.5% from the optimal, outperforming established methods, such as Genetic Algorithm and Ant Colony Optimization, with statistical significance (p < 0.05, ANOVA).'",
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_006",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "In our study, we implemented a new heuristic algorithm to solve the Traveling Salesman Problem (TSP). Our approach integrates advanced techniques in optimization and computational geometry, making it well-suited for large-scale instances. The algorithm was tested on a single benchmark instance from the TSPLIB library, and the results indicated a substantial reduction in computational time compared to the classic Genetic Algorithm approach. These findings suggest that our method could significantly enhance performance in practical applications. Future research will focus on expanding the testing to a broader range of instances to validate the generalizability of our results.",
+    "issue": "insufficient_sample_size",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_006",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "Our investigation introduced an innovative heuristic to tackle the Traveling Salesman Problem. This method was applied to a selected benchmark case from the TSPLIB collection, and the outcomes suggested an impressive enhancement in efficiency over the traditional Genetic Algorithm method.",
+    "Issue": "insufficient_sample_size",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_006",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "Our proposed model was trained on the CIFAR-10 dataset using a batch size of 64 and a learning rate of 0.001. We observed a test accuracy of 85.2%, which indicates that our model outperforms existing methods. The training was conducted over 50 epochs using stochastic gradient descent (SGD).",
+    "reference_context": "The referee is conventionally regarded as a sort of \u201cexpert witness,\u201d whose task is to tell",
+    "reference_answer": "Include a comparison with baseline models and report hyperparameters. Specifically: (1) Compare performance against well-established baseline models such as ResNet or VGG, and provide their performance metrics. (2) Detail the hyperparameter settings such as learning rate schedules, weight decay, and data augmentation techniques. Example: 'Our model achieved 85.2% test accuracy, outperforming the ResNet-18 baseline (83.5%) and VGG-16 baseline (82.7%). Hyperparameters were set as follows: initial learning rate 0.001 with cosine annealing, weight decay of 1e-4, and standard CIFAR-10 data augmentation.'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "machine_learning",
+    "section_type": "experiments",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_007",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our study, we developed a novel convolutional neural network architecture tailored for image classification tasks. The model was trained on the CIFAR-10 dataset using a batch size of 64, paired with a learning rate of 0.001. After 50 epochs of training with stochastic gradient descent (SGD), we observed a test accuracy of 85.2%, suggesting superior performance relative to existing frameworks.",
+    "reference_context": "The referee in the academic review process is often perceived as an 'expert witness,' tasked with providing informed evaluations.",
+    "reference_answer": "While our proposed model demonstrated an impressive 85.2% test accuracy on the CIFAR-10 dataset, surpassing current benchmarks, it's crucial to compare this performance with that of traditional architectures for context. Specifically, our model outperformed the widely recognized ResNet-18 baseline, which typically achieves around 84.3%, and the VGG-16 baseline, which records about 83.1%. For transparency, our hyperparameter setup included an initial learning rate of 0.001, adjusted through cosine annealing, a weight decay of 1e-4, and common CIFAR-10 data augmentation techniques such as random cropping and horizontal flipping.",
+    "issue_type": "Lack of Baseline Comparison and Hyperparameter Reporting",
+    "severity": "Moderate",
+    "domain": "Machine Learning Research",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_007",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "Our proposed model was trained on the CIFAR-10 dataset using a batch size of 64 and a learning rate of 0.001. We observed a test accuracy of 85.2%, which indicates that our model outperforms existing methods. The training was conducted over 50 epochs using stochastic gradient descent (SGD).",
+    "answer": "Include a comparison with baseline models and report hyperparameters. Specifically: (1) Compare performance against well-established baseline models such as ResNet or VGG, and provide their performance metrics. (2) Detail the hyperparameter settings such as learning rate schedules, weight decay, and data augmentation techniques. Example: 'Our model achieved 85.2% test accuracy, outperforming the ResNet-18 baseline (83.5%) and VGG-16 baseline (82.7%). Hyperparameters were set as follows: initial learning rate 0.001 with cosine annealing, weight decay of 1e-4, and standard CIFAR-10 data augmentation.'",
+    "improved_reference_answer": "\u274c Before: 'Our proposed model was trained on the CIFAR-10 dataset using a batch size of 64 and a learning rate of 0.001. We observed a test accuracy of 85.2%, which indicates that our model outperforms existing methods.'\n\u2705 After: Include specific comparisons and hyperparameter details: 'Our model achieved a test accuracy of 85.2%, surpassing the performance of well-known architectures like ResNet-18 and VGG-16, which achieved test accuracies of 83.5% and 82.7%, respectively. Key hyperparameters were: a constant learning rate of 0.001 initially, adjusted using cosine annealing, a weight decay of 1e-4, and data augmentation techniques such as random cropping and horizontal flipping applied to the CIFAR-10 dataset.'\n\n\u274c Before: 'The training was conducted over 50 epochs using stochastic gradient descent (SGD).'\n\u2705 After: Clarify methodology and parameter tuning: 'Training was conducted over 50 epochs using stochastic gradient descent (SGD) with momentum set to 0.9. An initial learning rate of 0.001 was used, reduced according to a cosine annealing schedule to fine-tune model performance. These choices reflected best practices for model convergence on the CIFAR-10 dataset.'",
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_007",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "Our proposed model was trained on the CIFAR-10 dataset using a batch size of 64 and a learning rate of 0.001. The CIFAR-10 dataset is a well-known benchmark for evaluating image classification models, consisting of 60,000 32x32 color images in 10 different classes. We observed a test accuracy of 85.2%, which indicates that our model outperforms existing methods. Data augmentation techniques such as random cropping and horizontal flipping were employed to enhance the robustness of the model. The training was conducted over 50 epochs using stochastic gradient descent (SGD). These steps ensured that our model was effectively trained and able to generalize well.",
+    "issue": "missing_baseline",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_007",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "In our experiments, the model was trained on CIFAR-10 utilizing a batch size of 64 and a learning rate of 0.001. Achieving a test accuracy of 85.2%, results suggest advancements over prior techniques. Training spanned 50 epochs with stochastic gradient descent as the optimization strategy.",
+    "Issue": "ambiguous_comparison",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_007",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We conducted a logistic regression analysis to predict customer churn using a dataset of 1,000 customer records. The model included variables such as customer tenure, monthly charges, and contract type. The model achieved an accuracy of 85%, indicating a strong predictive capability.",
+    "reference_context": "the proof so that the idea of the proof remains the same, but the proof gets shorter.",
+    "reference_answer": "Incorporate a baseline comparison and report on the model's performance relative to it. Specifically, (1) Compare the logistic regression model's performance against a simple baseline, such as a random classifier or a constant prediction model, (2) Provide additional performance metrics beyond accuracy, such as precision, recall, F1-score, and the area under the ROC curve, (3) If applicable, include an explanation of why logistic regression was chosen over other models, and (4) Ensure these additional results and comparisons are clearly reported in the text. For example: 'The logistic regression model achieved an 85% accuracy, outperforming the random baseline (50% accuracy). Additional metrics include a precision of 0.82, recall of 0.86, and an AUC of 0.90, justifying its use over simpler models.'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "statistics",
+    "section_type": "methods",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_008",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our study, we performed a logistic regression analysis using the Telco Customer Churn dataset, which contains 7,043 customer records from a telecommunications company. The model included predictors such as customer tenure, monthly charges, and contract type. The logistic regression achieved an accuracy of 85%, suggesting a strong predictive capability.",
+    "reference_context": "To ensure the robustness of our findings, it is essential to include a baseline comparison and report on the model's performance relative to it. Specifically, (1) Compare the logistic regression model's performance against a simple baseline, such as a random classifier or a constant prediction model, (2) Provide additional performance metrics beyond accuracy, such as precision, recall, F1-score, and the area under the ROC curve, (3) If applicable, include an explanation of why logistic regression was chosen over other models, and (4) Ensure these additional results and comparisons are clearly reported in the text. For example: 'The logistic regression model achieved an 85% accuracy, outperforming the random baseline (50% accuracy). Additional metrics include a precision of 0.82, recall of 0.86, and an AUC of 0.90, demonstrating its effectiveness over simpler models.'",
+    "reference_answer": "In our analysis, the logistic regression model yielded an accuracy of 85%, significantly surpassing the random baseline model, which only achieved an accuracy of 50%. To further validate the model's performance, we also calculated additional metrics: a precision of 0.82, a recall of 0.86, and an area under the ROC curve (AUC) of 0.90. These performance indicators suggest the model's capability in identifying customer churn effectively. The choice of logistic regression was informed by its interpretability and efficiency with binary outcomes. This method allowed us to gain insights into how variables like customer tenure and contract type influence churn probability, making it a fitting choice for our analysis.",
+    "issue_type": "Comparison and performance reporting",
+    "severity": "Moderate",
+    "domain": "Data Science",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_008",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We conducted a logistic regression analysis to predict customer churn using a dataset of 1,000 customer records. The model included variables such as customer tenure, monthly charges, and contract type. The model achieved an accuracy of 85%, indicating a strong predictive capability.",
+    "answer": "Incorporate a baseline comparison and report on the model's performance relative to it. Specifically, (1) Compare the logistic regression model's performance against a simple baseline, such as a random classifier or a constant prediction model, (2) Provide additional performance metrics beyond accuracy, such as precision, recall, F1-score, and the area under the ROC curve, (3) If applicable, include an explanation of why logistic regression was chosen over other models, and (4) Ensure these additional results and comparisons are clearly reported in the text. For example: 'The logistic regression model achieved an 85% accuracy, outperforming the random baseline (50% accuracy). Additional metrics include a precision of 0.82, recall of 0.86, and an AUC of 0.90, justifying its use over simpler models.'",
+    "reference_answer": {
+      "improvement_instructions": [
+        "Provide a clear baseline comparison for the logistic regression model's performance.",
+        "Report additional performance metrics to complement the accuracy figure."
+      ],
+      "before_after_examples": [
+        {
+          "before": "The model achieved an accuracy of 85%, indicating a strong predictive capability.",
+          "after": "The logistic regression model achieved an 85% accuracy, surpassing the baseline model's accuracy of 50%. This indicates a significant improvement in predictive capability."
+        },
+        {
+          "before": "Additional metrics include a precision of 0.82, recall of 0.86, and an AUC of 0.90, justifying its use over simpler models.",
+          "after": "To further evaluate model performance, we reported additional metrics such as precision (0.82), recall (0.86), F1-score (0.84), and area under the ROC curve (AUC) of 0.90. These metrics highlight the model's balance between sensitivity and specificity, supporting the decision to use logistic regression over other potential models like decision trees or support vector machines."
+        }
+      ],
+      "examples_of_good_writing_rigor": [
+        "Provide concrete examples of evaluation metrics: 'Our model achieved 94.2% accuracy (\u00b10.3%) and 91.7% F1-score on the test set.'",
+        "Use specific terminology to clarify which baseline models are being used for comparison: 'compared to a naive classifier predicting the majority class, which had a 65% accuracy.'",
+        "Clearly articulate the reasoning behind model selection, considering alternative methods: 'Logistic regression was selected due to its interpretability and efficiency with binary outcomes, which was preferable for our churn prediction task over more complex models like neural networks.'"
+      ]
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_008",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We conducted a logistic regression analysis to predict customer churn using a dataset of 1,000 customer records. The dataset was carefully cleaned and preprocessed to remove any missing or inconsistent data, ensuring the integrity of the model's predictions. The model included variables such as customer tenure, monthly charges, and contract type. The model achieved an accuracy of 85%, indicating a strong predictive capability. To further validate the model's performance, we split the data into training and test sets.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_008",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "In analyzing patterns of customer churn, we employed a logistic regression model on a dataset containing 1,000 customer entries. Variables considered included customer tenure, monthly charges, and contract type. The model showed an accuracy of 85%, suggesting its strong efficiency in prediction.",
+    "Issue": "missing_baseline",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_008",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "reference_question": "We developed a novel reinforcement learning algorithm and applied it to the CartPole-v1 environment. Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.",
+    "reference_context": "The guideline emphasizes the importance of providing a clear and concise proof while maintaining the essence of the original idea. It also highlights the need for clarity in notation and potential pitfalls that could lead to errors if not presented clearly.",
+    "reference_answer": "Incorporate baseline comparisons and report hyperparameters. Specifically: (1) Include performance metrics of standard algorithms like DQN or PPO on the same environment for a valid comparison, (2) Detail key hyperparameters (e.g., learning rate, discount factor, exploration strategy) used in the experiments. Example: 'Our algorithm balanced the pole for an average of 500 time steps, outperforming DQN (450 time steps) and PPO (460 time steps). Hyperparameters were tuned via grid search, with a learning rate of 0.001 and a discount factor of 0.99.'",
+    "issue_type": "missing_baseline",
+    "severity": "warning",
+    "domain": "machine_learning",
+    "section_type": "experiments",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_009",
+    "evolution_operator": "original"
+  },
+  {
+    "reference_question": "In our recent study, we introduced a cutting-edge reinforcement learning model, which we tested extensively on the CartPole-v1 simulation environment. The results were promising, with our model maintaining balance for an average of 490 time steps. This marked an improvement over traditional models in this domain.",
+    "reference_context": "The guideline stresses the significance of offering a succinct and coherent proof while retaining the core concept of the original idea. It further underscores the necessity for clarity in notation and the potential risks of errors if not presented transparently.",
+    "reference_answer": "Include baseline comparisons and report hyperparameters. Specifically: (1) Provide comparative performance metrics involving established algorithms such as DQN or PPO on the identical environment to ensure a valid benchmark, (2) Describe key hyperparameters (e.g., learning rate, discount factor, exploration strategy) employed during the experiments. For example: 'Our model consistently managed to balance the pole for an average of 490 time steps, surpassing DQN's performance (475 time steps) and PPO's results (480 time steps). The hyperparameters were optimized through a detailed grid search which included a learning rate of 0.0005 and a discount factor set to 0.98.'",
+    "issue_type": "Inadequate Comparative Analysis",
+    "severity": "Moderate",
+    "domain": "Machine Learning",
+    "section_type": "Experimental Results",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_009",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We developed a novel reinforcement learning algorithm and applied it to the CartPole-v1 environment. Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.",
+    "answer": "Incorporate baseline comparisons and report hyperparameters. Specifically: (1) Include performance metrics of standard algorithms like DQN or PPO on the same environment for a valid comparison, (2) Detail key hyperparameters (e.g., learning rate, discount factor, exploration strategy) used in the experiments. Example: 'Our algorithm balanced the pole for an average of 500 time steps, outperforming DQN (450 time steps) and PPO (460 time steps). Hyperparameters were tuned via grid search, with a learning rate of 0.001 and a discount factor of 0.99.'",
+    "reference_answer": {
+      "text": "For improved scientific rigor, provide comprehensive comparison and hyperparameter details: \n\n1. **Baseline Comparisons:** Explicitly compare your algorithm against standard benchmarks to substantiate superiority claims. \n   - \u274c Before: 'Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.'\n   - \u2705 After: 'Our algorithm balanced the pole for an average of 500 time steps, outperforming established methods such as DQN, which achieved 450 time steps, and PPO, which achieved 460 time steps, on the CartPole-v1 environment.'\n\n2. **Hyperparameter Specification:** Clearly specify key hyperparameters to ensure reproducibility and transparency.\n   - \u274c Before: 'Our algorithm successfully balanced the pole for an average of 500 time steps.'\n   - \u2705 After: 'Our algorithm, using a learning rate of 0.001, a discount factor of 0.99, and an epsilon-greedy exploration strategy with epsilon=0.1, balanced the pole for an average of 500 time steps.'\n\n3. **Use of Methodology Terminology:** Clearly state the tuning method used for hyperparameters, such as grid search or random search, and mention any computational resources if applicable.\n   - \u274c Before: 'Hyperparameters were tuned via grid search.'\n   - \u2705 After: 'Hyperparameters were optimized using grid search over a parameter space that included learning rates [0.0001, 0.001, 0.01], discount factors [0.95, 0.99], and exploration strategies [epsilon-greedy, softmax]. Computations were performed on a cluster with 4 NVIDIA Tesla V100 GPUs.'"
+    },
+    "evolution_operator": "increase_specificity",
+    "parent_seed_id": "rigor_seed_009",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "Question": "We developed a novel reinforcement learning algorithm and applied it to the CartPole-v1 environment. Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.",
+    "EvolvedQuestion": "We developed a novel reinforcement learning algorithm and applied it to the CartPole-v1 environment. The primary objective was to enhance the agent's ability to maintain the pole in an upright position efficiently. Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods. Additionally, we ensured that our approach was computationally efficient, allowing for real-time application in similar dynamic systems.",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_009",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  },
+  {
+    "question": "We created a distinctive reinforcement learning technique and utilized it with the CartPole-v1 setup. This approach managed to keep the pole balanced for an average duration of 500 time steps, indicating its potential advantages.",
+    "issue": "missing_baseline",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_009",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf"
+  }
+]
