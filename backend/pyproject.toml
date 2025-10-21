@@ -29,6 +29,7 @@ dependencies = [
     "matplotlib>=3.7.0",
     "seaborn>=0.12.0",
     "langchain-experimental>=0.0.68",
+    "rank-bm25>=0.2.2",
 ]
 
 [tool.hatch.build.targets.wheel]
