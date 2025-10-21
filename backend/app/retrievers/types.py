@@ -2,7 +2,7 @@
 from typing import TypedDict, Literal, Optional, Any, Dict
 from app.models.schemas import DocType
 
-RetrieverType = Literal["naive", "cohere_rerank"]
+RetrieverType = Literal["naive", "cohere_rerank", "bm25"]
 
 
 class BaseRetrieverConfig(TypedDict, total=False):
@@ -21,6 +21,11 @@ class CohereRerankConfig(BaseRetrieverConfig):
     initial_k: int  # Candidates before reranking
     model: str  # Cohere rerank model
     cohere_api_key: str  # API key
+
+
+class BM25RetrieverConfig(BaseRetrieverConfig):
+    """Configuration for BM25 retriever."""
+    pass  # Uses only base config
 
 
 # Union type for all configs (flexible for extension)

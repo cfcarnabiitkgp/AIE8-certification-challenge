@@ -46,14 +46,14 @@ class Settings(BaseSettings):
     default_retriever_type: str = "naive"
 
     # Clarity Agent Retriever Configuration
-    clarity_agent_retriever_type: str = "naive" # "cohere_rerank", "naive"
+    clarity_agent_retriever_type: str = "bm25" # "cohere_rerank", "naive", "bm25"
     clarity_agent_retriever_k: int = 8
     clarity_agent_retriever_initial_k: int = 20  # For rerank only
 
     # Rigor Agent Retriever Configuration
-    rigor_agent_retriever_type: str = "naive" # "cohere_rerank", "naive"
+    rigor_agent_retriever_type: str = "bm25" # "cohere_rerank", "naive", "bm25"
     rigor_agent_retriever_k: int = 8
-    rigor_agent_retriever_initial_k:1 int = 20  # For rerank only
+    rigor_agent_retriever_initial_k: int = 20  # For rerank only
 
     # Cohere Rerank Configuration (shared across all agents using rerank)
     cohere_rerank_model: str = "rerank-v3.5"

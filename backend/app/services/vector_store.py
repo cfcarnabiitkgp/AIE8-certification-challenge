@@ -159,7 +159,7 @@ class VectorStoreService:
                 collection_name=self.collection_name,
                 query_vector=query_embedding,
                 limit=k,
-                query_filter=query_filter
+                query_filter=query_filter,
             )
 
             # Format results
@@ -175,6 +175,71 @@ class VectorStoreService:
 
         except Exception as e:
             logger.error("Error in similarity search: %s", e)
+            return []
+
+    async def get_all_documents(
+        self,
+        doc_type: Optional[Union[DocType, str]] = None,
+        limit: int = 10000
+    ) -> List[Document]:
+        """
+        Retrieve all documents from the vector store.
+
+        This method is primarily used by BM25Retriever which needs access to
+        the full corpus to calculate term statistics.
+
+        Args:
+            doc_type: Optional document type filter
+            limit: Maximum number of documents to retrieve (default: 10000)
+
+        Returns:
+            List of LangChain Document objects
+        """
+        try:
+            # Build filter
+            query_filter = None
+            if doc_type is not None:
+                query_filter = self.create_doc_type_filter(doc_type)
+
+            # Use scroll API to retrieve all points
+            documents = []
+            offset = None
+
+            while True:
+                # Scroll through the collection
+                result = self.client.scroll(
+                    collection_name=self.collection_name,
+                    scroll_filter=query_filter,
+                    limit=100,  # Batch size
+                    offset=offset,
+                    with_vectors=False,  # We don't need vectors, just text
+                )
+
+                points, next_offset = result
+
+                # Convert points to Documents
+                for point in points:
+                    doc = Document(
+                        page_content=point.payload.get("text", ""),
+                        metadata={k: v for k, v in point.payload.items() if k != "text"}
+                    )
+                    documents.append(doc)
+
+                # Check if we've reached the limit or end
+                if next_offset is None or len(documents) >= limit:
+                    break
+
+                offset = next_offset
+
+            logger.info(
+                f"Retrieved {len(documents)} documents from vector store "
+                f"(doc_type={doc_type})"
+            )
+
+            return documents[:limit]
+
+        except Exception as e:
+            logger.error("Error retrieving all documents: %s", e)
             return []
     
     def _create_text_splitter(self):
