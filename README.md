@@ -1,4 +1,4 @@
-# Research Paper Peer Review System
+# Peerly: AI-powered co-reviewing system for technical manuscripts
 
 An AI-powered, web-based multi-agentic system for real-time peer review of technical research papers. Built with FastAPI, LangGraph, Next.js, and Qdrant, this application provides Grammarly-style suggestions tailored for academic research writing in mathematics, computer science, and related domains.
 
