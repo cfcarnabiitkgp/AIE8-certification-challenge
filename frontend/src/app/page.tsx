@@ -73,10 +73,7 @@ export default function Home() {
   return (
     <div className="h-screen flex flex-col">
       <header className="bg-blue-600 text-white py-4 px-6 shadow-md">
-        <h1 className="text-2xl font-bold">Research Paper Peer Review</h1>
-        <p className="text-sm text-blue-100 mt-1">
-          AI-powered feedback for technical research papers
-        </p>
+        <h1 className="text-2xl font-bold">Peerly: An agentic co-reviewer for technical manuscripts</h1>
       </header>
 
       <main className="flex-1 flex overflow-hidden">
