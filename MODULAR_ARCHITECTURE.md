@@ -53,20 +53,18 @@ This implementation uses **LangGraph's StateGraph** with **Pydantic BaseModel** 
 ### Agent Details
 
 ```
-┌──────────────────┐          ┌──────────────────┐
-│  ClarityAgent    │          │   RigorAgent     │
-│  (BaseAgent)     │          │   (BaseAgent)    │
-│                  │          │                  │
-│  • Unclear text  │          │  • Missing       │
-│  • Vague refs    │          │    controls      │
-│  • Undefined     │          │  • Statistical   │
-│    terms         │          │    issues        │
-│  • Complex       │          │  • Mathematical  │
-│    sentences     │          │    rigor         │
-│                  │          │                  │
-│  All sections    │          │  Filtered        │
-│                  │          │  sections only   │
-└──────────────────┘          └──────────────────┘
+┌──────────────────────┐     ┌────────────────────┐     ┌─────────────────────┐
+│  ClarityAgent        │     │   RigorAgent       │     │ ReviewerController  │
+│  (gpt-4o-mini+ReAct) │     │ (gpt-4o+ReAct+     │     │ (gpt-4o)            │
+│                      │     │  Tools)            │     │                     │
+│  • Unclear text      │     │ • Missing controls │     │ • Cross-validate    │
+│  • Vague refs        │     │ • Statistical      │     │ • Prioritize        │
+│  • Undefined terms   │     │   issues           │     │ • Filter            │
+│  • Complex sentences │     │ • Mathematical     │     │   contradictions    │
+│                      │     │   rigor            │     │ • Remove            │
+│  All sections        │     │ Filtered sections  │     │   redundancies      │
+│  Uses RAG retrieval  │     │ Uses RAG + Tavily  │     │                     │
+└──────────────────────┘     └────────────────────┘     └─────────────────────┘
 ```
 
 ## Directory Structure
@@ -89,6 +87,26 @@ backend/app/
 │   └── rigor/                         # Rigor agent module
 │       ├── __init__.py
 │       └── rigor_agent.py             # Experimental/math rigor checks
+│
+├── retrievers/                        # RAG retrieval strategies
+│   ├── registry.py                    # RetrieverRegistry (Singleton)
+│   ├── config_helper.py               # Configuration helpers
+│   ├── builders.py                    # Builder classes
+│   ├── naive.py                       # Vector similarity retriever
+│   ├── bm25.py                        # Hybrid BM25 + vector retriever
+│   └── cohere_rerank.py               # Cohere reranking retriever
+│
+├── prompts/                           # Prompt templates
+│   ├── clarity_agent/
+│   │   └── prompts.py                 # Clarity prompts
+│   ├── rigor_agent/
+│   │   └── prompts.py                 # Rigor prompts
+│   └── review_controller/
+│       └── prompts.py                 # Orchestrator prompts
+│
+├── services/                          # External services
+│   ├── vector_store.py                # Qdrant integration
+│   └── tavily_service.py              # Tavily web search
 │
 └── models/
     ├── __init__.py
@@ -235,6 +253,32 @@ class RigorAgent(BaseReviewerAgent):
 
 **Smart Filtering**: Only analyzes relevant sections using keyword matching (method, experiment, result, proof, etc.).
 
+**Tavily Integration**: Uses web search to find recent best practices and validate claims.
+
+### 7. Retrieval Layer (`retrievers/`)
+
+Flexible RAG implementation with multiple retrieval strategies:
+
+```python
+# Registry pattern for managing retrievers
+class RetrieverRegistry:
+    @classmethod
+    def create(cls, retriever_type: str, vector_store, config) -> BaseRetriever
+
+    # Available types:
+    # - "naive": Vector similarity search
+    # - "bm25": Hybrid BM25 + vector search
+    # - "cohere_rerank": Cohere reranking
+```
+
+**Retriever Strategies:**
+
+1. **NaiveRetriever**: Simple vector similarity using embeddings
+2. **BM25Retriever**: Hybrid approach combining keyword matching (BM25) and semantic search
+3. **CohereRerankRetriever**: Uses Cohere's reranking API for improved relevance
+
+**Configuration**: Each agent can use a different retriever strategy via `config.py`.
+
 ## StateGraph Workflow Details
 
 ### Node Functions
@@ -337,28 +381,6 @@ cd backend
 python test_langgraph.py
 ```
 
-## Performance
-
-### Expected Performance (Typical Hardware)
-
-| Paper Size | Sections | LangGraph Workflow | Legacy Simple |
-|------------|----------|--------------------|---------------|
-| Small      | 3-5      | 5-7s               | 7-9s          |
-| Medium     | 6-10     | 7-10s              | 10-15s        |
-| Large      | 11-15    | 10-14s             | 15-20s        |
-
-### Cost Efficiency
-
-Using `gpt-4o-mini`:
-- **Small papers**: ~$0.03-0.04 per review
-- **Medium papers**: ~$0.04-0.06 per review
-- **Large papers**: ~$0.06-0.08 per review
-
-**Components**:
-- Clarity agent: ~$0.01-0.02 per section
-- Rigor agent: ~$0.01-0.02 per section (filtered)
-- Orchestrator: ~$0.01 per review
-
 ## Extending the System
 
 ### Adding a New Agent to the Graph
@@ -440,38 +462,6 @@ python test_langgraph.py
 | **Speed** | 5-10s | 7-15s |
 | **Code Lines** | ~370 lines | ~300 lines |
 
-## Design Decisions
-
-### Why Only Clarity + Rigor?
-
-Based on analysis of the rigorous repository and practical feedback:
-
-1. **Most Valuable**: These provide the most actionable feedback
-2. **Clear Scope**: Well-defined responsibilities
-3. **Universal**: Applicable to all paper sections
-4. **Fast**: Fewer agents = faster reviews
-
-**Other checks** (citations, structure, coherence) can be added as needed, but clarity + rigor provide the core value.
-
-### Why LangGraph?
-
-LangGraph provides significant advantages:
-- **Explicit state management**: Pydantic BaseModel for type safety
-- **Graph visualization**: Can visualize and debug workflow
-- **Conditional branching**: Built-in support for dynamic flow
-- **Extensibility**: Easy to add new nodes and paths
-- **Orchestration**: Natural fit for validation/coordination steps
-- **Production-ready**: Well-tested framework with good tooling
-
-**Trade-off**: Slightly more code than simple async/await, but much better maintainability and debugging.
-
-### Why Section-wise?
-
-1. **Focused context**: Each agent sees only relevant content
-2. **Token efficiency**: Process sections within limits
-3. **Parallelization**: Concurrent agent execution
-4. **Granular feedback**: Issues tied to specific sections
-
 ## Implementation Details
 
 ### LangGraph Compilation
@@ -512,22 +502,6 @@ logger.info(f"[LangGraph] Parsed {len(sections)} sections")
 
 This makes debugging workflow execution straightforward.
 
-## Future Enhancements
-
-### Potential Additions
-
-1. **CitationAgent**: Check reference appropriateness
-2. **StructureAgent**: Validate section ordering
-3. **CoherenceAgent**: Check logical flow
-4. **CustomAgent**: User-defined review criteria
-
-### Performance Optimizations
-
-1. **Batch processing**: Multiple papers at once
-2. **Caching**: Cache repeated analyses
-3. **Streaming**: Real-time suggestion delivery
-4. **Parallel sections**: Process sections concurrently
-
 ## Testing
 
 ```bash
@@ -557,20 +531,7 @@ python test_langgraph.py
 # Final suggestions: 12 (after orchestrator)
 ```
 
-## Conclusion
-
-The LangGraph architecture provides a **robust, type-safe, and maintainable** solution for research paper peer review. By leveraging StateGraph with Pydantic models and focusing on the most valuable checks (clarity + rigor + orchestration), we achieve:
-
-✅ **Type-safe state management** with Pydantic BaseModel
-✅ **Explicit workflow** with conditional branching
-✅ **Orchestrator validation** for quality control
-✅ **Easy to extend** with new nodes/agents
-✅ **Production-ready** with proper error handling
-✅ **Efficient** at 5-10 seconds for typical papers
-
 ---
-
-**Inspired by**: [Rigorous Repository](https://github.com/Agentic-Systems-Lab/rigorous/tree/main/Agent1_Peer_Review)
 
 **Framework**: LangGraph StateGraph with Pydantic BaseModel
 

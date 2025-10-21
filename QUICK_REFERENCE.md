@@ -34,8 +34,12 @@ docker-compose up
 
 **Current Implementation**: LangGraph StateGraph with Pydantic BaseModel
 
-- **2 Agents**: Clarity + Rigor
-- **Orchestrator**: Final validation and prioritization
+See [`backend/architecture.png`](backend/architecture.png) for visual diagram.
+
+**Key Components:**
+- **Agents**: ClarityAgent (gpt-4o-mini) + RigorAgent (gpt-4o + Tavily)
+- **Orchestrator**: ReviewerController (gpt-4o) for validation and prioritization
+- **Retrieval**: 3 strategies (Naive, BM25, Cohere Rerank) via RetrieverRegistry
 - **Section-wise**: Concurrent per-section analysis
 - **Performance**: 5-10 seconds for typical papers
 
@@ -43,11 +47,25 @@ docker-compose up
 
 ### Environment Variables (`backend/.env`)
 ```bash
+# Required
 OPENAI_API_KEY=sk-your-key
+
+# Qdrant
 QDRANT_HOST=localhost
 QDRANT_PORT=6333
-LLM_MODEL=gpt-4o-mini
-LLM_TEMPERATURE=0.1
+
+# LLM Models
+CLARITY_MODEL=gpt-4o-mini
+RIGOR_MODEL=gpt-4o
+ORCHESTRATOR_MODEL=gpt-4o
+
+# Retrieval (optional)
+CLARITY_RETRIEVER_TYPE=bm25      # naive, bm25, cohere_rerank
+RIGOR_RETRIEVER_TYPE=bm25
+
+# External Services (optional)
+TAVILY_API_KEY=your-tavily-key   # For web search in RigorAgent
+COHERE_API_KEY=your-cohere-key   # For reranking retriever
 ```
 
 ### Token Limits (Adjust in code)
@@ -120,11 +138,13 @@ http://localhost:8000/docs
 ### To Customize
 | File | Purpose |
 |------|---------|
-| `backend/app/agents/review_controller_langgraph.py` | ⭐ LangGraph workflow & nodes |
-| `backend/app/agents/clarity/clarity_agent.py` | Clarity agent prompts |
-| `backend/app/agents/rigor/rigor_agent.py` | Rigor agent prompts |
+| `backend/app/agents/review_controller_langgraph.py` | ⭐ LangGraph workflow & orchestration |
+| `backend/app/prompts/clarity_agent/prompts.py` | Clarity agent prompts |
+| `backend/app/prompts/rigor_agent/prompts.py` | Rigor agent prompts |
+| `backend/app/prompts/review_controller/prompts.py` | Orchestrator validation prompts |
+| `backend/app/retrievers/registry.py` | Retriever strategy selection |
 | `backend/app/models/schemas.py` | State & Pydantic models |
-| `backend/app/config.py` | LLM settings |
+| `backend/app/config.py` | LLM settings & retriever config |
 | `frontend/src/components/Editor.tsx` | Editor UI |
 | `frontend/src/components/SuggestionPanel.tsx` | Suggestions display |
 
@@ -191,26 +211,6 @@ Orchestrator:     ~1000-2000 tokens
 Total (N sections): N × 2 agents × ~1500 tokens + orchestrator
 ```
 
-### Smart Filtering
-```python
-Clarity Agent:  All sections
-Rigor Agent:    Only sections with keywords:
-                - method, experiment, result, proof
-                - dataset, model, evaluation
-                - statistical, mathematical
-                Skips: Abstract, Introduction, Conclusion, etc.
-```
-
-## 🔍 Debugging Logs
-
-### Backend Logs Show
-- `[LangGraph]` prefixed workflow execution
-- Node transitions (parse → analyze → next → validate)
-- Conditional edge decisions
-- Section-by-section progress
-- Agent suggestion counts
-- Orchestrator reasoning
-
 ### Check Logs For
 ```bash
 # LangGraph workflow
@@ -256,59 +256,3 @@ cd frontend && npm run build
 # Run in production
 cd backend && uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
-
-## 📞 Support
-
-1. Check documentation (README.md, GETTING_STARTED.md)
-2. Review logs for errors
-3. Test with simple examples first
-4. Check GitHub issues
-5. Create detailed bug report
-
-## 🎯 Common Use Cases
-
-### Academic Paper Review
-```markdown
-Workflow: LangGraph (default)
-Target Venue: Your conference (e.g., "NeurIPS", "ICML")
-Agents: Clarity + Rigor + Orchestrator
-Time: 5-10 seconds
-```
-
-### Iterative Writing
-```markdown
-1. Write section in editor
-2. Click "Review Paper"
-3. Review suggestions
-4. Revise based on feedback
-5. Repeat for each section
-```
-
-### Pre-Submission Check
-```markdown
-1. Complete full draft
-2. Run full review
-3. Focus on ERROR severity first
-4. Address WARNING severity next
-5. Consider INFO suggestions
-```
-
-## 🔐 Security Checklist
-
-- [ ] `.env` in `.gitignore`
-- [ ] API key not committed
-- [ ] CORS configured correctly
-- [ ] Secrets manager for production
-- [ ] Rate limiting enabled (if deployed)
-
----
-
-**Quick Start**: `./start.sh` or `docker-compose up`
-
-**Default Workflow**: LangGraph StateGraph ⭐
-
-**Architecture**: 2 Agents (Clarity + Rigor) + Orchestrator Validation
-
-**Cost Per Review**: ~$0.03-0.06 (gpt-4o-mini)
-
-**Performance**: 5-10 seconds for typical papers

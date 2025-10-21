@@ -30,7 +30,12 @@ docker run -d -p 6333:6333 -p 6334:6334 \
     qdrant/qdrant
 ```
 
-**What's happening?** Starting a local vector database to store and retrieve research guidelines.
+**What's happening?** Starting a local vector database for storing and retrieving research guidelines.
+
+Verify Qdrant is running:
+```bash
+docker ps  # Should show qdrant/qdrant container running
+```
 
 ### Step 2: Setup Backend
 
@@ -114,31 +119,20 @@ Our method is better. Future work is needed.
    - No statistical tests
    - Missing sections (Introduction, Related Work)
 
-## What Each Part Does
+## System Architecture Overview
 
-```
-┌─────────────────────────────────────────────────┐
-│              Your Browser                        │
-│  ┌──────────────┐      ┌──────────────────┐   │
-│  │    Write     │      │   View           │   │
-│  │   Markdown   │      │  Suggestions     │   │
-│  └──────────────┘      └──────────────────┘   │
-└─────────────────────────────────────────────────┘
-              ↕ (sends paper, receives suggestions)
-┌─────────────────────────────────────────────────┐
-│        Backend (LangGraph Workflow)              │
-│  ┌──────────────────────────────────────────┐  │
-│  │   StateGraph: Section-by-Section         │  │
-│  │   1. Parse → 2. Analyze (Clarity+Rigor) │  │
-│  │   3. Next → 4. Loop? → 5. Validate      │  │
-│  └──────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────┘
-              ↕ (future: guideline retrieval)
-┌─────────────────────────────────────────────────┐
-│         Qdrant (Future RAG)                      │
-│    Ready for conference-specific guidelines     │
-└─────────────────────────────────────────────────┘
-```
+For a detailed architecture diagram, see [`backend/architecture.png`](backend/architecture.png).
+
+**Three Main Layers:**
+
+1. **API Layer (FastAPI)**: Handles incoming review requests and returns suggestions
+2. **Orchestration Layer (LangGraph)**: Manages workflow with state transitions
+3. **Agent Layer**: Specialized agents for different analysis types
+   - **ClarityAgent**: Analyzes writing clarity (all sections)
+   - **RigorAgent**: Validates experimental/mathematical rigor (filtered sections)
+   - **ReviewerController**: Orchestrates, validates, and prioritizes suggestions
+4. **Retrieval Layer**: RAG support with multiple strategies (Naive, BM25, Cohere Rerank)
+5. **External Services**: Qdrant (vector DB), OpenAI (LLMs), Cohere (reranking), Tavily (web search)
 
 ## Understanding Suggestions
 
