@@ -1,0 +1,8 @@
+{
+  "retriever_config": "clarity_naive_k8",
+  "faithfulness": 0.1,
+  "answer_relevancy": 0.07531098145332857,
+  "context_precision": 0.125,
+  "context_recall": 1.0,
+  "context_f1": 0.22222222222222224
+}

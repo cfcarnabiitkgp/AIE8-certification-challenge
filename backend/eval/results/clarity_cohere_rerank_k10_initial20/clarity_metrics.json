@@ -1,0 +1,8 @@
+{
+  "retriever_config": "clarity_cohere_rerank_k10_initial20",
+  "faithfulness": 0.0,
+  "answer_relevancy": 0.6721467429931711,
+  "context_precision": 0.26,
+  "context_recall": 0.4,
+  "context_f1": 0.07272727272727272
+}

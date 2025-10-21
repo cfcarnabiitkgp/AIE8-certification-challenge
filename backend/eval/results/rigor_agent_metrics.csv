@@ -1,0 +1,7 @@
+Retriever Configuration,K Value,Answer Relevancy,Context Precision,Context Recall,Faithfulness
+Naive,8,0.7436,0.2500,1.0000,0.0000
+Naive,10,0.7436,0.2300,1.0000,0.0000
+BM25,8,0.7436,0.1875,0.7000,0.0000
+BM25,10,0.7436,0.1800,0.8000,0.0000
+Cohere Rerank (initial=20),8,0.7436,0.3300,0.9000,0.0000
+Cohere Rerank (initial=20),10,0.7436,0.4100,0.9000,0.0000

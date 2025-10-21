@@ -78,6 +78,18 @@ def apply_evolution_operator(seed: dict, operator_name: str, llm) -> dict:
         if 'guideline_source_file' not in evolved:
             evolved['guideline_source_file'] = seed.get('guideline_source_file', 'unknown')
 
+        # VALIDATION: For operators that should modify the question, check if it actually changed
+        # increase_specificity is allowed to keep the same question (it only modifies the answer)
+        # but add_distractor and increase_subtlety MUST produce a different question
+        operators_requiring_new_question = ['add_distractor', 'increase_subtlety', 'increase_realism',
+                                           'combine_issues', 'diversify_domain']
+
+        if operator_name in operators_requiring_new_question:
+            if evolved['reference_question'].strip() == seed.get('reference_question', '').strip():
+                print(f"    ⚠️  Warning: {operator_name} did not modify reference_question. Retrying...")
+                # Return None to indicate failure - this will be skipped
+                return None
+
         return evolved
 
     except Exception as e:
@@ -115,11 +127,13 @@ def evolve_seeds_to_candidates(
     print(f"Selected {len(selected_seeds)} seeds to evolve")
 
     # Define which operators to apply
+    # NOTE: We exclude "increase_specificity" because it keeps the same reference_question
+    # and only modifies the answer, which creates duplicates in the golden dataset
     operators_to_apply = [
         "increase_realism",
-        "increase_specificity",
         "add_distractor",
         "increase_subtlety",
+        "combine_issues",
     ]
 
     for i, seed in enumerate(selected_seeds, 1):

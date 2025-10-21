@@ -1,177 +1,83 @@
 [
   {
-    "question": "We developed a novel reinforcement learning algorithm and applied it to the CartPole-v1 environment. Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.",
-    "answer": "Incorporate baseline comparisons and report hyperparameters. Specifically: (1) Include performance metrics of standard algorithms like DQN or PPO on the same environment for a valid comparison, (2) Detail key hyperparameters (e.g., learning rate, discount factor, exploration strategy) used in the experiments. Example: 'Our algorithm balanced the pole for an average of 500 time steps, outperforming DQN (450 time steps) and PPO (460 time steps). Hyperparameters were tuned via grid search, with a learning rate of 0.001 and a discount factor of 0.99.'",
-    "reference_answer": {
-      "text": "For improved scientific rigor, provide comprehensive comparison and hyperparameter details: \n\n1. **Baseline Comparisons:** Explicitly compare your algorithm against standard benchmarks to substantiate superiority claims. \n   - \u274c Before: 'Our algorithm successfully balanced the pole for an average of 500 time steps, showcasing its superiority over existing methods.'\n   - \u2705 After: 'Our algorithm balanced the pole for an average of 500 time steps, outperforming established methods such as DQN, which achieved 450 time steps, and PPO, which achieved 460 time steps, on the CartPole-v1 environment.'\n\n2. **Hyperparameter Specification:** Clearly specify key hyperparameters to ensure reproducibility and transparency.\n   - \u274c Before: 'Our algorithm successfully balanced the pole for an average of 500 time steps.'\n   - \u2705 After: 'Our algorithm, using a learning rate of 0.001, a discount factor of 0.99, and an epsilon-greedy exploration strategy with epsilon=0.1, balanced the pole for an average of 500 time steps.'\n\n3. **Use of Methodology Terminology:** Clearly state the tuning method used for hyperparameters, such as grid search or random search, and mention any computational resources if applicable.\n   - \u274c Before: 'Hyperparameters were tuned via grid search.'\n   - \u2705 After: 'Hyperparameters were optimized using grid search over a parameter space that included learning rates [0.0001, 0.001, 0.01], discount factors [0.95, 0.99], and exploration strategies [epsilon-greedy, softmax]. Computations were performed on a cluster with 4 NVIDIA Tesla V100 GPUs.'"
-    },
-    "evolution_operator": "increase_specificity",
-    "parent_seed_id": "rigor_seed_009",
-    "source": "evolved",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "quality_scores": {
-      "realism": 5,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 5,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is highly realistic as it mirrors the kind of feedback and detail expected in academic papers, particularly in fields like machine learning where reproducibility and clear comparisons are crucial. The issue of lacking comprehensive comparison and hyperparameter details is clearly identifiable and well-defined, making it easy for a reviewer to understand the problem. The pedagogical value is high because it provides specific examples of how to improve scientific rigor, which is a subtle but important aspect of academic writing. The actionability is excellent, as the reference answer provides concrete examples of how to improve the text, making it immediately usable for authors. The guideline alignment is perfect, as the context and the issue are directly related, ensuring that the feedback is relevant and applicable. Overall, this is an excellent example that should be included in the dataset."
-    },
-    "weighted_score": 5.0,
-    "final_score": 5.8
-  },
-  {
-    "reference_question": "In our study, we propose a new branch-and-bound algorithm designed to tackle the capacitated vehicle routing problem (CVRP), which we evaluated using a range of well-known benchmark instances. Notably, our algorithm achieved an average reduction in total distance traveled of 5.2% compared to standard heuristic methods. Our evaluation was conducted on 10 CVRP instances from the standard Solomon dataset.",
-    "reference_context": "The challenges of effective technical writing in the context of presenting mathematical and computer science research.",
-    "reference_answer": "To strengthen the validity of our claims, it is crucial to include a comprehensive comparison with existing baseline methods and ensure the reporting of statistical significance. Specifically: (1) Explicitly identify the heuristic methods used as baseline comparators, such as the Clarke-Wright savings algorithm or the Sweep algorithm, (2) Execute the proposed algorithm over several independent trials to control for stochastic variations, (3) Conduct formal statistical tests, such as ANOVA or paired t-tests, to substantiate the significance of the observed improvements. For instance: 'Our optimized approach achieved an average reduction in total distance traveled of 5.2% \u00b1 0.7% (mean \u00b1 standard deviation across 10 runs) when compared to the Clarke-Wright savings algorithm. The results were statistically significant, as confirmed by a paired t-test with p < 0.01.'",
-    "issue_type": "Lack of detailed comparative analysis with baselines",
+    "reference_question": "In our educational research, we explored the influence of an innovative pedagogical approach on student achievement in a university-level statistics course. Conducted over a six-week period, our study encompassed 30 undergraduate students who were exposed to the new instructional strategy. Analysis of the data revealed a mean increase of 12% in final exam scores when contrasted with performance metrics from the previous academic year.",
+    "reference_context": "The evaluator is typically seen as an authoritative figure, whose role is to provide a critical and unbiased assessment.",
+    "reference_answer": "A more methodologically robust design would incorporate a control group. To improve reliability: (1) Include a control group that receives the conventional teaching method, (2) Utilize statistical analyses such as an ANCOVA to adjust for any pre-existing differences, (3) Present the results with effect sizes (e.g., Cohen's d) and confidence intervals to precisely measure the new method's effect. For instance: 'The cohort instructed with the innovative method demonstrated a 12% score elevation compared to the control group, with a Cohen's d of 0.7 (95% CI: 0.4 to 1.0), suggesting a statistically significant advantage (p < 0.01, ANCOVA).'",
+    "issue_type": "Methodological Flaw",
     "severity": "Moderate",
-    "domain": "Computer Science",
-    "section_type": "Results and Discussion",
-    "evolution_operator": "increase_realism",
-    "parent_seed_id": "rigor_seed_001",
-    "source": "evolved",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "quality_scores": {
-      "realism": 5,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 4,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is highly realistic as it mirrors the type of content and issues commonly found in academic papers within the computer science domain, particularly in algorithm evaluation. The issue of lacking detailed comparative analysis with baselines is clearly identifiable and well-defined, making it easy for a reviewer to understand. The pedagogical value is high as it highlights the importance of statistical validation and detailed comparison in research, which are subtle yet crucial aspects of technical writing. The reference answer is specific and actionable, providing clear steps to improve the paper's validity. The context and issue are perfectly aligned, ensuring that the guidance is relevant and applicable. Overall, the example is of excellent quality and should be included in the dataset."
-    },
-    "weighted_score": 4.8,
-    "final_score": 5.6
-  },
-  {
-    "reference_question": "In our study, we applied a logistic regression model to predict the likelihood of disease presence based on patient demographic data. The model was trained on a dataset comprising 500 samples, achieving an accuracy of 85%. These results highlight the model's potential utility in predictive diagnostics.",
-    "reference_context": "Mathematical Writing\u2014Issues of technical writing and the effective presentation of mathematics and computer science. Preparation of theses, papers, books, and 'literate' computer programs.",
-    "reference_answer": "Include a discussion of baseline comparisons and statistical testing. Specifically: (1) Compare the logistic regression model's performance with other baseline models (e.g., decision tree, SVM), (2) Conduct statistical significance tests to validate the model's superior performance, (3) Report the p-values from these tests to support the claims of effectiveness. Example: 'Our model achieved 85% accuracy, significantly outperforming the decision tree baseline (80%, p < 0.05, McNemar's test).'",
-    "issue_type": "missing_baseline",
-    "severity": "warning",
-    "domain": "statistics",
-    "section_type": "results",
-    "source": "guideline_generated",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "seed_id": "rigor_seed_000",
-    "evolution_operator": "original",
-    "quality_scores": {
-      "realism": 4,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 4,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is realistic as it reflects a common issue in academic papers where baseline comparisons and statistical significance are often omitted. The issue is clearly identifiable, as the absence of baseline comparisons and statistical testing is a well-known gap in model evaluation. The pedagogical value is high because it highlights the importance of these elements in validating model performance, which is a subtle but crucial aspect of statistical reporting. The reference answer is specific and actionable, providing clear steps to address the issue. The guideline alignment is perfect, as the context of mathematical writing and effective presentation directly relates to the issue of missing baseline comparisons. Overall, the example is of high quality and should be included in the dataset."
-    },
-    "weighted_score": 4.6,
-    "final_score": 5.3999999999999995
-  },
-  {
-    "reference_question": "In our research, we employed a logistic regression model to evaluate the probability of disease presence using patient demographic and clinical data. Our model was developed on the well-known Framingham Heart Study dataset, consisting of 500 unique samples, and reached an accuracy of 85%. These findings underscore the potential applicability of our model in predictive health analytics.",
-    "reference_context": "Mathematical Writing\u2014Challenges in technical writing and effectively presenting mathematical and computational research. This includes the preparation of dissertations, research articles, monographs, and 'literate' programming projects.",
-    "reference_answer": "Incorporate a comparative analysis with baseline models and statistical validation. Specifically: (1) Benchmark the logistic regression model against other standard models such as decision trees and support vector machines, (2) Perform statistical significance testing to confirm the superior performance of the logistic regression model, (3) Present the p-values to substantiate our conclusions about the model's efficacy. For example: 'Our logistic regression model achieved an 85% accuracy, significantly surpassing the decision tree benchmark (achieving only 80% accuracy, p < 0.05, according to McNemar's test), thus demonstrating its robustness and reliability in predictive tasks.'",
-    "issue_type": "Comparative Analysis and Statistical Validation",
-    "severity": "Moderate",
-    "domain": "Mathematical and Computational Research",
-    "section_type": "Research Methodology",
-    "evolution_operator": "increase_realism",
-    "parent_seed_id": "rigor_seed_000",
-    "source": "evolved",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "quality_scores": {
-      "realism": 4,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 4,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is realistic as it reflects common practices in academic papers where models are compared and validated statistically, hence a score of 4 for realism. The issue of needing comparative analysis and statistical validation is clearly identifiable, earning a 5 for clarity. The pedagogical value is high because it highlights the importance of benchmarking and statistical testing, which are crucial in research, thus a score of 4. The reference answer is specific and provides actionable steps, such as using McNemar's test and reporting p-values, justifying a score of 5 for actionability. The guideline alignment is perfect as the context of mathematical writing and the issue of comparative analysis are well-matched, resulting in a score of 5. Overall, the example is of high quality and should be included, hence a score of 5."
-    },
-    "weighted_score": 4.6,
-    "final_score": 5.3999999999999995
-  },
-  {
-    "reference_question": "We implemented a novel transformer-based architecture and trained it on the CIFAR-10 dataset. The model achieved a test accuracy of 91.2%, which indicates superior performance over existing models. We utilized a learning rate of 0.001 and a batch size of 128.",
-    "reference_context": "We spent the rest of class continuing to examine the homework assignment. In the interest of succinct notes, I have replaced many literal phrases by their generic equivalents. For example, I might have replaced \u2018A > B\u2019 by \u2018\u27e8relation\u27e9\u2019. This time I have divided the comments into two sets: those dealing with what I will call \u201cform\u201d (parentheses, capitalization, fonts, etc.) and those dealing with \u201ccontent\u201d (wording, sentence construction, tense, etc.).",
-    "reference_answer": "Report hyperparameter tuning details and rationale. Specifically: (1) Describe the hyperparameter search strategy (e.g., grid search, random search, Bayesian optimization), (2) Provide a range or list of values tested for critical hyperparameters like learning rate and batch size, (3) Explain how the chosen hyperparameters were determined to be optimal. Example: 'We conducted a random search over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the combination that maximized validation accuracy.'",
-    "issue_type": "unreported_hyperparameters",
-    "severity": "warning",
-    "domain": "machine_learning",
-    "section_type": "methods",
-    "source": "guideline_generated",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "seed_id": "rigor_seed_002",
-    "evolution_operator": "original",
-    "quality_scores": {
-      "realism": 4,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 4,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is realistic as it reflects a common scenario in academic papers where hyperparameter tuning details are often omitted, yet crucial for reproducibility. The issue of unreported hyperparameters is clearly identifiable, as the question mentions specific hyperparameters but lacks details on how they were chosen. The pedagogical value is high because it highlights the importance of reporting hyperparameter tuning, which is often overlooked. The reference answer is specific and actionable, providing a clear example of how to report hyperparameter tuning. The guideline alignment is perfect as the context and issue match well, focusing on the need for detailed reporting in machine learning experiments. Overall, the example is of high quality and should be included in the dataset."
-    },
-    "weighted_score": 4.6,
-    "final_score": 5.3999999999999995
-  },
-  {
-    "reference_question": "Our novel transformer-based model, trained on the CIFAR-10 dataset, achieved a test accuracy of 91.2%, surpassing existing architectures. The model utilized a learning rate of 0.001 and a batch size of 128.",
-    "reference_context": "During the class, we further explored the homework assignment. For brevity in our notes, many specific phrases have been replaced with generic terms. For instance, 'A > B' might be replaced by '\u27e8relation\u27e9'. The discussion was divided into two categories: comments on 'form' (punctuation, capitalization, etc.) and comments on 'content' (word choice, sentence structure, tense, etc.).",
-    "reference_answer": "Detail the hyperparameter tuning process and elaborate on the rationale. Specifically: (1) Outline the hyperparameter search methodology (e.g., grid search, random search, Bayesian optimization), (2) List or provide ranges for crucial hyperparameters like learning rate and batch size, (3) Justify how the selected hyperparameters were deemed optimal. For example, 'A random search was conducted over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the configuration that maximized validation accuracy.'",
-    "issue_type": "Content Omission",
-    "severity": "Moderate",
-    "domain": "Machine Learning",
-    "section_type": "Methods",
-    "evolution_operator": "increase_realism",
-    "parent_seed_id": "rigor_seed_002",
-    "source": "evolved",
-    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
-    "quality_scores": {
-      "realism": 4,
-      "clarity_of_issue": 5,
-      "pedagogical_value": 4,
-      "actionability": 5,
-      "guideline_alignment": 5,
-      "overall_quality": 5,
-      "justification": "The example is realistic as it reflects a common scenario in machine learning papers where hyperparameter tuning is crucial but often omitted. The issue of content omission is clearly identifiable, as the question explicitly asks for details on hyperparameter tuning, which are missing. The pedagogical value is high because it highlights the importance of detailing the hyperparameter tuning process, which is a subtle but critical aspect of model evaluation. The reference answer is specific and actionable, providing a clear methodology for addressing the omission. The guideline alignment is perfect, as the context and issue are well-matched. Overall, this example is of high quality and should be included in the dataset."
-    },
-    "weighted_score": 4.6,
-    "final_score": 5.3999999999999995
-  },
-  {
-    "reference_question": "In our research, we developed a novel heuristic method to tackle the Traveling Salesman Problem (TSP), and we evaluated its performance using a benchmark instance from the TSPLIB95 dataset. The preliminary findings showed a marked improvement in computational efficiency when compared to the conventional Genetic Algorithm method.",
-    "reference_context": "In academic publishing, the referee often serves as an expert critic, whose responsibility is to provide constructive feedback.",
-    "reference_answer": "To enhance the scientific rigor of the study, it is recommended to perform a detailed evaluation across multiple benchmark instances and to present comprehensive performance data. Specifically: (1) Test the heuristic on a wide range of instances from the TSPLIB95 dataset, such as 'berlin52', 'pr76', and 'eil101', (2) Report average computational time and solution accuracy for each instance, (3) Compare the results with multiple well-established algorithms like Simulated Annealing and Ant Colony Optimization, (4) Apply statistical analyses, such as ANOVA, to ascertain the significance of observed differences. For instance: 'Our novel heuristic was tested on 15 TSPLIB95 instances, yielding an average computational time of 15.3 seconds (\u00b1 3.2 std) and a mean deviation of 1.5% from the best-known solutions. It significantly outperformed the Genetic Algorithm across all instances tested (p < 0.01, ANOVA).'",
-    "issue_type": "Insufficient benchmarking",
-    "severity": "Moderate",
-    "domain": "Computer Science",
+    "domain": "Educational Research",
     "section_type": "Results and Discussion",
     "evolution_operator": "increase_realism",
     "parent_seed_id": "rigor_seed_006",
     "source": "evolved",
     "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
     "quality_scores": {
+      "realism": 4,
+      "clarity_of_issue": 5,
+      "pedagogical_value": 5,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is highly realistic as it reflects a common methodological flaw in educational research, where studies often lack control groups. The issue is clearly identifiable, as the absence of a control group is a fundamental flaw in experimental design. The pedagogical value is high because it highlights the importance of robust experimental design and statistical analysis, which are crucial for valid research findings. The reference answer is specific and actionable, providing clear steps to improve the study's design. The guideline alignment is perfect, as the context and issue are well-matched. Overall, this example is of excellent quality and should be included in the dataset."
+    },
+    "weighted_score": 4.8,
+    "final_score": 5.6
+  },
+  {
+    "reference_question": "In our study, we developed a novel heuristic approach for tackling the Vehicle Routing Problem with Time Windows (VRPTW). We evaluated our method using the well-known Solomon benchmark dataset, consisting of 56 instances, and observed an average reduction in total travel distance of 14.7% when compared to the best-known solutions. To ensure efficiency, each instance was processed in less than 8 minutes.",
+    "reference_context": "In academic discourse, the role of a referee extends beyond mere oversight, embodying the expertise necessary to critically evaluate and validate research findings.",
+    "reference_answer": "To enhance the robustness of our findings, it is essential to incorporate multiple experimental runs and report on the variability in outcomes. Specifically: (1) Conduct the heuristic multiple times (such as 20 runs) on each Solomon benchmark instance to capture performance variability, (2) Calculate and present both the mean and standard deviation for the travel distance reduction across these runs, (3) Compare the results to established baseline heuristics, employing statistical significance tests (e.g., paired t-test) to substantiate the improvements. For example: 'Our heuristic consistently achieved an average travel distance reduction of 14.7% \u00b1 1.1% (mean \u00b1 std over 20 runs), and significantly outperformed the baseline heuristics with a reduction of 11.5% \u00b1 0.9% (p < 0.05, paired t-test against existing methods).'",
+    "issue_type": "Experiments",
+    "severity": "Medium",
+    "domain": "Operations Research",
+    "section_type": "Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_007",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "quality_scores": {
       "realism": 5,
       "clarity_of_issue": 5,
       "pedagogical_value": 4,
       "actionability": 5,
       "guideline_alignment": 5,
       "overall_quality": 5,
-      "justification": "The example is highly realistic as it mirrors the kind of feedback and issues commonly found in academic peer reviews, particularly in computer science research papers. The issue of insufficient benchmarking is clearly identifiable and well-defined, making it easy for a reviewer to understand the problem. The pedagogical value is high as it highlights the importance of comprehensive benchmarking in research, which is a subtle but crucial aspect of scientific rigor. The reference answer is specific and actionable, providing clear steps for improvement, such as testing on multiple instances and using statistical analyses. The guideline alignment is perfect, as the context of academic publishing and the role of a referee directly relate to the issue of insufficient benchmarking. Overall, the example is of excellent quality and should be included in the dataset."
+      "justification": "The example is highly realistic as it mirrors the type of content and analysis found in academic papers within the operations research domain. The issue of experimental robustness is clearly identifiable, as it is a common concern in research involving heuristic methods. The pedagogical value is high because it highlights the importance of multiple runs and statistical analysis, which are crucial for validating research findings. The reference answer is specific and actionable, providing clear steps to improve the robustness of the study. The guideline alignment is perfect, as the context of the referee's role in evaluating research directly relates to the issue of experimental rigor. Overall, the example is of excellent quality and should be included in the dataset."
     },
     "weighted_score": 4.8,
-    "final_score": 5.3
+    "final_score": 5.6
   },
   {
-    "reference_question": "We implemented a novel branch-and-bound algorithm to solve the capacitated vehicle routing problem (CVRP) on a set of benchmark instances. Our approach reduced the total distance traveled by 5% compared to the existing heuristic methods. The algorithm was tested on 10 CVRP instances from the well-known Solomon dataset.",
+    "reference_question": "We conducted a survey to evaluate the connection between physical activity frequency and psychological well-being among adults. Participants were asked to report their weekly exercise routines and mental health status via a Likert scale. Findings showed a positive correlation between physical activity and enhanced mental well-being scores.",
+    "reference_context": "The proof is to simplify the core idea of the proof while making it more concise. Although the mathematics involved is not elementary, it only employs functions and sets, ensuring it remains within our comprehension.",
+    "reference_answer": "In our analysis, we utilized Pearson's correlation coefficient to examine the relationship. We discovered a correlation coefficient of r = 0.53, p < 0.001, with a 95% confidence interval of [0.43, 0.63]. Prior to conducting the correlation analysis, we verified assumptions of normality and linearity by employing the Shapiro-Wilk test and examining QQ plots. The dataset, referred to as the 'Adult Fitness and Mental Health Survey', comprised responses from 2,000 participants, which provided a robust basis for our findings. These steps ensured the validity and reliability of our results.",
+    "issue_type": "Explanation of Data Analysis",
+    "severity": "Moderate",
+    "domain": "Health and Psychology Research",
+    "section_type": "Methods",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_008",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "quality_scores": {
+      "realism": 5,
+      "clarity_of_issue": 4,
+      "pedagogical_value": 4,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is highly realistic as it mirrors the structure and content of a real academic paper, particularly in health and psychology research. The issue of 'Explanation of Data Analysis' is clear, as it focuses on the need for a concise and simplified explanation of the data analysis process. The pedagogical value is high because it highlights the importance of verifying assumptions and ensuring the validity of results, which are crucial steps in research. The actionability is excellent, as the reference answer provides specific steps and methods used in the analysis, making it immediately usable for someone looking to improve their own work. The guideline alignment is perfect, as the context and issue are directly related to the domain of health and psychology research. Overall, the quality is excellent, making it a valuable inclusion in a GOLDEN evaluation dataset."
+    },
+    "weighted_score": 4.65,
+    "final_score": 5.45
+  },
+  {
+    "reference_question": "In our study, we applied a logistic regression model to predict the likelihood of disease onset based on a set of clinical features. The model was trained on a dataset comprising 200 patient records. We evaluated the model's performance using accuracy as the sole metric.",
     "reference_context": "Issues of technical writing and the effective presentation of mathematics and computer science.",
-    "reference_answer": "Include a comparison with baseline methods and report statistical significance. Specifically: (1) Clearly state which existing heuristic methods were used as baselines, (2) Run the algorithm over multiple trials to account for variability, (3) Perform statistical analyses such as ANOVA or t-tests to determine the significance of the improvements. Example: 'Our approach reduced the total distance traveled by 5% \u00b1 0.8% (mean \u00b1 std over 5 runs) compared to the Clarke-Wright savings algorithm baseline, with statistical significance confirmed via a paired t-test (p < 0.05).'",
+    "reference_answer": "Include a more comprehensive evaluation of the model's performance by adding other relevant metrics such as precision, recall, F1-score, and AUC-ROC. Additionally, provide a comparison with a baseline model, such as a simple decision tree, to contextualize the performance of the logistic regression model. Example: 'The logistic regression model achieved an accuracy of 82%, with a precision of 0.79, recall of 0.81, and F1-score of 0.80. Compared to a decision tree baseline (accuracy 76%, precision 0.75, recall 0.74, F1-score 0.74), the logistic regression model offers improved performance.'",
     "issue_type": "missing_baseline",
     "severity": "warning",
-    "domain": "operations_research",
+    "domain": "statistics",
     "section_type": "results",
     "source": "guideline_generated",
     "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
@@ -184,51 +90,68 @@
       "actionability": 5,
       "guideline_alignment": 5,
       "overall_quality": 5,
-      "justification": "The example is realistic as it reflects common practices in academic papers where new algorithms are compared against baselines. The issue of missing baseline is clearly identifiable, as the example lacks specific details about the comparison methods. The pedagogical value is high because it highlights the importance of statistical validation in research, which is a subtle but crucial aspect. The reference answer is highly actionable, providing specific steps to improve the evaluation. The guideline alignment is perfect, as the context directly addresses the issue of technical writing in operations research. Overall, the example is of high quality and should be included in the dataset."
+      "justification": "The example is realistic as it reflects a common issue in academic papers where model evaluation is limited to a single metric. The issue of missing baseline is clearly identifiable and well-defined, making it easy for a reviewer to understand. The pedagogical value is high as it highlights the importance of comprehensive model evaluation and comparison with a baseline, which is a subtle but crucial aspect of statistical analysis. The reference answer is specific and actionable, providing clear steps to improve the evaluation. The guideline alignment is perfect as the context matches the issue of technical writing in statistics. Overall, the example is of high quality and should be included in the dataset."
     },
     "weighted_score": 4.6,
-    "final_score": 4.8999999999999995
+    "final_score": 5.3999999999999995
   },
   {
-    "question": "Our proposed algorithm was evaluated on the CIFAR-10 dataset. It achieved a classification accuracy of 85.7%, outperforming existing methods. The results clearly indicate the superiority of our approach.",
-    "reference_answer": {
-      "before": "Provide a baseline comparison and detailed explanation. Specifically: (1) Compare the performance against established baseline models (e.g., ResNet, VGG) under the same conditions to support claims of superiority, (2) Describe the experimental setup and parameter configurations used, (3) Include visual aids such as confusion matrices or error bars to convey performance nuances. Example: 'Our algorithm achieved 85.7% accuracy, surpassing the ResNet-18 baseline (82.5%) and VGG-16 (83.2%) using the same training protocol. The experiments were conducted with a learning rate of 0.001 and batch size of 64, across 5 random seeds. Figure 2 shows the confusion matrix, highlighting improved performance on minority classes.'",
-      "after": "Enhance the comparison and methodological transparency with precise details and metrics. Specifically: (1) Directly compare the performance against established baseline models such as ResNet-18 and VGG-16, using identical experimental setups, to substantiate claims of superiority with concrete numbers, (2) Thoroughly describe the experimental setup and parameter configurations, including exact hyperparameters, dataset preprocessing steps, and the rationale for chosen settings, (3) Utilize visual aids like confusion matrices, ROC curves, or error bars to illustrate performance nuances and variability. Example Improvement: 'Our novel algorithm achieved a classification accuracy of 85.7% on the CIFAR-10 dataset, outperforming the ResNet-18 baseline (82.5%) and VGG-16 baseline (83.2%) under identical conditions. We employed a learning rate of 0.001 and a batch size of 64, iteratively training across 5 random seeds to ensure robustness. The dataset was preprocessed with standard normalization techniques. Figure 2 provides a confusion matrix, which demonstrates our algorithm's improved classification performance on minority classes, particularly in reducing Type II errors. Additionally, error bars in Figure 3 show the standard deviation of accuracy across trials, highlighting our model's consistency.'"
-    },
-    "evolution_operator": "increase_specificity",
-    "parent_seed_id": "rigor_seed_004",
+    "reference_question": "In our research, we implemented a logistic regression model to assess the probability of developing a cardiovascular condition, utilizing a dataset derived from the Framingham Heart Study. The model was trained on 200 participants' data and evaluated exclusively using accuracy.",
+    "reference_context": "Challenges in technical writing related to the effective presentation of results in scientific studies, particularly in the fields of mathematics and computer science.",
+    "reference_answer": "To provide a more comprehensive evaluation, it is essential to include additional performance metrics such as precision, recall, F1-score, and the Area Under the Receiver Operating Characteristic Curve (AUC-ROC). Moreover, presenting a comparative analysis by introducing a baseline model like a Naive Bayes classifier could further contextualize the logistic regression model's effectiveness. For instance, 'The logistic regression model yielded an accuracy of 84%, complemented by a precision of 0.82, recall of 0.85, and an F1-score of 0.83. In comparison, the Naive Bayes baseline resulted in an accuracy of 78%, with a precision of 0.76, recall of 0.77, and an F1-score of 0.76. These results underscore the logistic regression model's superior performance.'",
+    "issue_type": "Evaluation comprehensiveness and context",
+    "severity": "Medium",
+    "domain": "Scientific research and technical writing",
+    "section_type": "Results and Discussion",
+    "evolution_operator": "increase_realism",
+    "parent_seed_id": "rigor_seed_001",
     "source": "evolved",
     "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
     "quality_scores": {
-      "realism": 5,
-      "clarity_of_issue": 4,
+      "realism": 4,
+      "clarity_of_issue": 5,
       "pedagogical_value": 4,
       "actionability": 5,
       "guideline_alignment": 5,
       "overall_quality": 5,
-      "justification": "The example is highly realistic as it mirrors the type of content and detail expected in academic papers, particularly in the field of machine learning. The issue is somewhat clear, focusing on the need for detailed comparison and methodological transparency, though it could be more explicitly stated. The pedagogical value is high as it highlights the importance of thorough experimental documentation and comparison, which is a subtle but crucial aspect of academic writing. The actionability is excellent, providing specific steps and examples that can be directly applied to improve a paper. The guideline alignment is perfect, as the suggestions directly address the need for clarity and detail in academic reporting. Overall, this is a high-quality example that would be valuable in a golden evaluation dataset."
+      "justification": "The example is realistic as it reflects common issues in academic papers where only accuracy is reported, which is a frequent oversight in scientific research. The issue is clearly identifiable, focusing on the need for comprehensive evaluation metrics. The pedagogical value is high as it highlights the importance of using multiple metrics for model evaluation, which is a subtle but crucial aspect of technical writing. The reference answer is specific and actionable, providing clear steps to improve the evaluation comprehensiveness. The guideline alignment is perfect as the context directly addresses the issue of evaluation comprehensiveness in scientific writing. Overall, the example is of high quality and should be included in the dataset."
     },
-    "weighted_score": 4.65,
-    "final_score": 4.65
+    "weighted_score": 4.6,
+    "final_score": 5.3999999999999995
   },
   {
-    "question": "We implemented a novel transformer-based architecture and trained it on the CIFAR-10 dataset. The model achieved a test accuracy of 91.2%, which indicates superior performance over existing models. We utilized a learning rate of 0.001 and a batch size of 128.",
-    "reference_answer": {
-      "report_hyperparameter_tuning_details_and_rationale": {
-        "1": "Specify the hyperparameter search strategy used, such as grid search, random search, or Bayesian optimization. Clarify the method with precise terminology.",
-        "2": "Detail the range or discrete values of tested hyperparameters, particularly for pivotal ones like learning rate and batch size. Providing context for choices improves clarity.",
-        "3": "Articulate how you determined the optimal hyperparameters. Illustrate using the metric utilized to evaluate performance improvements, like validation accuracy.",
-        "examples": [
-          "\u274c Before: 'We conducted a random search over learning rates [0.0001, 0.001, 0.01] and batch sizes [64, 128, 256], selecting the combination that maximized validation accuracy.'",
-          "\u2705 After: 'We employed a Bayesian optimization strategy, exploring a search space where the learning rate was varied across a logarithmic scale from 0.0001 to 0.01 and batch sizes from 32 to 256. The optimal hyperparameters, a learning rate of 0.001 and batch size of 128, were chosen based on achieving the highest validation accuracy of 92.5% after 50 epochs, compared to other configurations.'"
-        ],
-        "improvement_suggestions": [
-          "\u274c Before: 'Our approach showed better performance.'",
-          "\u2705 After: 'Our approach improved performance by achieving a test accuracy of 91.2%, compared to the baseline model's performance of 89.7%.'"
-        ]
-      }
+    "reference_question": "The linear programming model was solved using CPLEX: The solver was run with default parameters. The results showed an optimal solution with an objective value of 345.2. The computational time was observed to be 2.3 seconds.",
+    "reference_context": "Don\u2019t overdo the use of colons. While the colon in \u2018Define it as follows:\u2019 is fine, the one in \u2018We have: \u27e8formula\u27e9\u2019 should be omitted since the formula just completes the sentence. Some papers had more colons than periods.",
+    "reference_answer": "Remove unnecessary colons to improve sentence flow and adhere to standard punctuation rules. Specifically: (1) Replace 'using CPLEX:' with 'using CPLEX,', as the colon is not needed to introduce the method. (2) Ensure that colons are only used when introducing a list or a full sentence. The revised sentence should read: 'The linear programming model was solved using CPLEX, and the solver was run with default parameters.'",
+    "issue_type": "punctuation_overuse",
+    "severity": "info",
+    "domain": "operations_research",
+    "section_type": "methods",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_002",
+    "evolution_operator": "original",
+    "quality_scores": {
+      "realism": 4,
+      "clarity_of_issue": 5,
+      "pedagogical_value": 4,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is realistic as it reflects a common issue in academic writing, particularly in technical fields like operations research, where precise language is crucial. The clarity of the issue is high because the problem of punctuation overuse is explicitly identified and explained. The pedagogical value is strong as it highlights a subtle yet important aspect of writing that can improve readability and professionalism. The actionability is excellent, with specific instructions on how to correct the issue. The guideline alignment is perfect, as the context provided directly addresses the issue of colon overuse. Overall, this example is of high quality and would be a valuable addition to a GOLDEN evaluation dataset."
     },
-    "evolution_operator": "increase_specificity",
+    "weighted_score": 4.6,
+    "final_score": 5.3999999999999995
+  },
+  {
+    "reference_question": "In our study, we applied the CPLEX solver to optimize the linear programming model, utilizing the standard configurations to ensure consistency across runs: The solver processed the 'RetailDataSet_v2' and identified an optimal solution with an objective value of 354.8. Notably, the computation was completed in a span of just 3.1 seconds.",
+    "reference_context": "In academic writing, especially in scientific papers, the use of colons should be carefully considered to maintain a professional tone. While a colon is appropriate for introducing lists or separate clauses that could stand alone as sentences, unnecessary use can disrupt the flow of the narrative. Authors should aim for clarity and brevity, ensuring that punctuation aids rather than hinders the understanding of the content.",
+    "reference_answer": "To enhance clarity and readability, remove unnecessary colons and integrate transitions smoothly. Specifically: (1) Replace 'to ensure consistency across runs:' with 'to ensure consistency across runs,' as the colon is not warranted here. (2) Ensure colons are used correctly, such as when introducing lists or complete sentences. The revised segment should read: '...utilizing the standard configurations to ensure consistency across runs, the solver processed the 'RetailDataSet_v2' and identified an optimal solution with an objective value of 354.8. Remarkably, the computation was completed in just 3.1 seconds.'",
+    "issue_type": "punctuation",
+    "severity": "moderate",
+    "domain": "academic",
+    "section_type": "methodology",
+    "evolution_operator": "increase_realism",
     "parent_seed_id": "rigor_seed_002",
     "source": "evolved",
     "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
@@ -239,9 +162,81 @@
       "actionability": 5,
       "guideline_alignment": 5,
       "overall_quality": 5,
-      "justification": "The example is realistic as it reflects common practices in academic papers regarding hyperparameter tuning, though it could be slightly more detailed to achieve a perfect score. The clarity of the issue is excellent, as the example clearly distinguishes between less and more informative descriptions of hyperparameter tuning. The pedagogical value is high because it highlights the importance of detailed reporting in research, which is a subtle but crucial aspect of scientific communication. The actionability is perfect, as the example provides specific before-and-after scenarios that are immediately applicable. The guideline alignment is also perfect, as the example directly addresses the need for clarity and detail in reporting hyperparameter tuning strategies. Overall, the example is of high quality and should be included in the dataset."
+      "justification": "The example is realistic as it reflects a common issue in academic writing regarding the misuse of colons, which is a subtle but important aspect of maintaining clarity and professionalism in scientific papers. The issue is clearly identifiable, as the misuse of punctuation is explicitly pointed out and corrected. The pedagogical value is high because it teaches the correct use of colons, which is not always obvious to writers. The actionability is excellent, as the reference answer provides a specific and clear revision of the text. The guideline alignment is perfect, as the context directly addresses the issue of punctuation in academic writing. Overall, the example is of high quality and would be a valuable addition to a GOLDEN evaluation dataset."
     },
     "weighted_score": 4.6,
-    "final_score": 4.6
+    "final_score": 5.3999999999999995
+  },
+  {
+    "reference_question": "We applied our novel clustering algorithm to the CIFAR-10 dataset. The algorithm showed remarkable performance and clustered the images with high precision. We used a learning rate of 0.01 and batch size of 32.",
+    "reference_context": "We spent the rest of class continuing to examine the homework assignment. In the interest of succinct notes, I have replaced many literal phrases by their generic equivalents. For example, I might have replaced \u2018A > B\u2019 by \u2018\u27e8relation\u27e9\u2019. This time I have divided the comments into two sets: those dealing with what I will call \u201cform\u201d (parentheses, capitalization, fonts, etc.) and those dealing with \u201ccontent\u201d (wording, sentence construction, tense, etc.).",
+    "reference_answer": "Specify hyperparameter tuning and settings more comprehensively. Specifically: (1) Describe the hyperparameter search space and method (e.g., grid search, random search), (2) Report all relevant hyperparameters and settings (not just learning rate and batch size), (3) Include any specific values chosen after tuning. Example: 'We performed a grid search over the learning rate [0.001, 0.01, 0.1] and batch size [16, 32, 64]. The optimal settings were a learning rate of 0.01, batch size of 32, and weight decay of 0.0001.'",
+    "issue_type": "unreported_hyperparameters",
+    "severity": "warning",
+    "domain": "machine_learning",
+    "section_type": "methods",
+    "source": "guideline_generated",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "seed_id": "rigor_seed_003",
+    "evolution_operator": "original",
+    "quality_scores": {
+      "realism": 4,
+      "clarity_of_issue": 5,
+      "pedagogical_value": 4,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is realistic as it reflects a common issue in academic papers where hyperparameters are not fully reported, which is crucial for reproducibility. The issue is clearly identifiable, as the lack of comprehensive hyperparameter reporting is explicitly stated. The pedagogical value is high because it highlights the importance of detailed reporting in machine learning experiments, which is not always obvious to beginners. The actionability is excellent, as the reference answer provides a clear and specific example of how to improve the reporting. The guideline alignment is perfect, as the context and issue match well, focusing on the need for detailed hyperparameter reporting. Overall, this is a high-quality example that should be included in the dataset."
+    },
+    "weighted_score": 4.6,
+    "final_score": 5.3999999999999995
+  },
+  {
+    "reference_question": "In our recent study, we explored the efficiency of various optimization algorithms. The linear programming model was solved using CPLEX: The solver was run with default parameters. The results showed an optimal solution with an objective value of 345.2. The computational time was observed to be 2.3 seconds. These findings demonstrate the potential for significant improvements in processing speed, which could be beneficial in large-scale applications.",
+    "reference_context": "Don\u2019t overdo the use of colons. While the colon in \u2018Define it as follows:\u2019 is fine, the one in \u2018We have: \u27e8formula\u27e9\u2019 should be omitted since the formula just completes the sentence. Some papers had more colons than periods.",
+    "reference_answer": "The excerpt still overuses colons. While the overall structure of the text is mostly good, the colon used in 'The linear programming model was solved using CPLEX:' is unnecessary and should be removed to improve clarity and adhere to proper punctuation guidelines.",
+    "issue_type": "punctuation_overuse",
+    "severity": "moderate",
+    "domain": "academic writing",
+    "section_type": "results",
+    "evolution_operator": "add_distractor",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "quality_scores": {
+      "realism": 4,
+      "clarity_of_issue": 5,
+      "pedagogical_value": 4,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is realistic as it reflects a common issue in academic writing where punctuation, particularly colons, is overused. The clarity of the issue is high because the problem is explicitly identified and explained. The pedagogical value is strong as it highlights a subtle yet important aspect of writing that can improve clarity and professionalism. The actionability is excellent because the feedback is specific and provides a clear directive to remove the unnecessary colon. The guideline alignment is perfect as the context directly addresses the issue of colon overuse. Overall, this example is of high quality and would be a valuable addition to a GOLDEN evaluation dataset."
+    },
+    "weighted_score": 4.6,
+    "final_score": 4.8999999999999995
+  },
+  {
+    "reference_question": "The linear programming model was solved using CPLEX. The solver, which was run with default parameters, resulted in an optimal solution: the objective value was 345.2. Computational time observed to be 2.3 seconds.",
+    "reference_context": "Don\u2019t overdo the use of colons. While the colon in \u2018Define it as follows:\u2019 is fine, the one in \u2018We have: \u27e8formula\u27e9\u2019 should be omitted since the formula just completes the sentence. Some papers had more colons than periods.",
+    "reference_answer": "In the rewritten text, the use of the colon after 'optimal solution:' is subtle but unnecessary. The phrase following the colon completes the preceding sentence, so a colon isn't warranted here.",
+    "issue_type": "punctuation_overuse",
+    "severity": "subtle",
+    "domain": "technical writing",
+    "section_type": "example",
+    "evolution_operator": "increase_subtlety",
+    "parent_seed_id": "rigor_seed_002",
+    "source": "evolved",
+    "guideline_source_file": "/Users/arnabbhattacharya/Desktop/AIE8-certification-challenge/backend/eval/golden_dataset/../../app/resources/rigor_docs/knuth_mathematical_writing.pdf",
+    "quality_scores": {
+      "realism": 4,
+      "clarity_of_issue": 5,
+      "pedagogical_value": 4,
+      "actionability": 5,
+      "guideline_alignment": 5,
+      "overall_quality": 5,
+      "justification": "The example is realistic as it reflects a common issue in technical writing where punctuation is overused, particularly colons. The issue is clearly identifiable, as the context provides a specific guideline about when colons are appropriate. The pedagogical value is high because it highlights a subtle aspect of punctuation that can improve clarity in writing. The actionability is excellent, as the reference answer provides a clear and specific correction. The guideline alignment is perfect, as the context directly addresses the issue of colon overuse. Overall, this is a high-quality example that effectively illustrates the issue and provides a useful correction."
+    },
+    "weighted_score": 4.6,
+    "final_score": 4.8999999999999995
   }
 ]

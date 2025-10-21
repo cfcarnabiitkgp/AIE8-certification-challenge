@@ -1,0 +1,195 @@
+{
+  "evaluator": "rigor",
+  "retriever_config": "rigor_cohere_rerank_k8_initial20",
+  "timestamp": "2025-10-21T08:51:35.979847",
+  "num_samples": 10,
+  "metrics": {
+    "faithfulness": 0.0,
+    "answer_relevancy": 0.7436401000926536,
+    "context_precision": 0.175,
+    "context_recall": 0.9,
+    "context_f1": 0.28888888888888886
+  },
+  "detailed_results": [
+    {
+      "user_input": "In our educational research, we explored the influence of an innovative pedagogical approach on student achievement in a university-level statistics course. Conducted over a six-week period, our study encompassed 30 undergraduate students who were exposed to the new instructional strategy. Analysis of the data revealed a mean increase of 12% in final exam scores when contrasted with performance metrics from the previous academic year.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "We looked at some of the results.",
+        "COMMENTS ON STUDENT ANSWERS (1)\n9]",
+        "COMMENTS ON STUDENT ANSWERS (2)]",
+        "COMMENTS ON STUDENT ANSWERS (2)\n13]",
+        "COMMENTS ON STUDENT WORK]",
+        "Understand? Videotapes of the class sessions are kept in the Mathematical & Computer Sciences\nLibrary at Stanford. The preparation of this report was supported in part by NSF grant CCR-8610181.",
+        "Don found many illustrative illustrations in the book The Visual Display of Quantitative\nInformation by Tufte. He also recommended How to Lie with Statistics by Hu\ufb00, which\nadvises (for example) that if you would impress your populace with the dazzling success\nof the Five-Year Plan in increasing wheat production by 17%, then draw two sacks, the\n\ufb01rst 6 cm and the second 7 cm tall. The perceived increase, of course, corresponds to the\napparent volumes of the sacks, and 73 is 58% larger than 63. .",
+        "defeat the purpose. In addition to the raw scores, a variety of other parameters come out of a style analysis:\naverage length of sentences, percentage of sentences that are much shorter or longer than\nthe average, percentage of sentences that begin with various parts of speech, etc. The\nprogram also attempts to classify sentences into types and tabulate their frequencies, as well\nas telling us the percentages of nouns, adjectives, verbs (active or passive), etc. A sentence\nis considered \u201cpassive\u201d if a passive verb appears in it anywhere, even in a subclause. Curiously, style classi\ufb01es any sentence that begins \u2018It . ."
+      ],
+      "reference": "A more methodologically robust design would incorporate a control group. To improve reliability: (1) Include a control group that receives the conventional teaching method, (2) Utilize statistical analyses such as an ANCOVA to adjust for any pre-existing differences, (3) Present the results with effect sizes (e.g., Cohen's d) and confidence intervals to precisely measure the new method's effect. For instance: 'The cohort instructed with the innovative method demonstrated a 12% score elevation compared to the control group, with a Cohen's d of 0.7 (95% CI: 0.4 to 1.0), suggesting a statistically significant advantage (p < 0.01, ANCOVA).'",
+      "reference_contexts": [
+        "The remaining 28 lectures covered these and other issues in depth. We saw many\nexamples of \u201cbefore\u201d and \u201cafter\u201d from manuscripts in progress. We learned how to avoid\nexcessive subscripts and superscripts. We discussed the documentation of algorithms, com-\nputer programs, and user manuals. We considered the process of refereeing and editing. We studied how to make e\ufb00ective diagrams and tables, and how to \ufb01nd appropriate quota-\ntions to spice up a text. Some of the material duplicated some of what would be discussed\nin writing classes o\ufb00ered by the English department, but the vast majority of the lectures\nwere devoted to issues that are speci\ufb01c to mathematics and/or computer science. Guest lectures by Herb Wilf (University of Pennsylvania), Je\ufb00Ullman (Stanford),\nLeslie Lamport (Digital Equipment Corporation), Nils Nilsson (Stanford), Mary-Claire\nvan Leunen (Digital Equipment Corporation), Rosalie Stemer (San Francisco Chronicle),\nand Paul Halmos (University of Santa Clara), were a special highlight as each of these\noutstanding authors presented their own perspectives on the problems of mathematical\ncommunication. This report contains transcripts of the lectures and copies of various handouts that\nwere distributed during the quarter. We think the course was able to clarify a surprisingly\nlarge number of issues that play an important part in the life of every professional who\nworks in mathematical \ufb01elds. Therefore we hope that people who were unable to attend\nthe course might still bene\ufb01t from it, by reading this summary of what transpired. The authors wish to thank Phyllis Winkler for the \ufb01rst-rate technical typing that\nmade these notes possible. Caveat: These are transcripts of lectures, not a polished set of essays on the subject. Some of the later lectures refer to mistakes in the notes of earlier lectures; we have decided\nto correct some (but not all) of those mistakes before printing this report. References to"
+      ]
+    },
+    {
+      "user_input": "In our study, we developed a novel heuristic approach for tackling the Vehicle Routing Problem with Time Windows (VRPTW). We evaluated our method using the well-known Solomon benchmark dataset, consisting of 56 instances, and observed an average reduction in total travel distance of 14.7% when compared to the best-known solutions. To ensure efficiency, each instance was processed in less than 8 minutes.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        ". using 4.3(below) we derive . . .",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        "and solicited their opinions. Don had already refereed the paper himself, of course, and\nfound it a very badly written exposition of a very interesting algorithm (due to someone\nbesides the author). As such, it was certainly worthy of the referees\u2019 study.",
+        "PRESENTING ALGORITHMS]",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        ". Notice the helpful use of a redundant \u2018+\u2019 sign here. Use the present tense for timeless facts. Things that we proved some time ago are never-\ntheless still true. Try to avoid repeating words in a sentence. (Before) \u2013 \u2013 approach the values \u2013 \u2013 \ufb01ll in the values \u2013 \u2013 . (After) \u2013 \u2013 approach the values \u2013 \u2013 \ufb01ll in the entries \u2013 \u2013 . In answer to a question from the class, Don suggested giving page numbers only for remote\nreferences (to equations, say). Usually it is enough to say \u2018using Equation 5.14\u2019 or whatever. It becomes unwieldy to give page numbers for every single such reference. A member of\nthe class suggested the \u2018freeway method\u2019 for numbering tables; number them with the page\nnumber on which they appear. Don confessed that he hadn\u2019t thought of this one. Sounds\nlike a neat idea. The formula\n(Before)\nX\nk\u2264m\n\u0012r\nk\n\u0013 \u0010\nk \u2212r\n2\n\u0011\n= \u2212m + 1\n2\n\u0012\nr\nm + 1\n\u0013\nlooks a bit confusing because of the minus sign on the right, so Don\nchanged it to\n(After)\nX\nk\u2264m\n\u0012r\nk\n\u0013 \u0010r\n2 \u2212k\n\u0011\n= m + 1\n2\n\u0012\nr\nm + 1\n\u0013\n. There may be many ways to write a formula; you have the freedom to select the best. (This change also propagated into the subsequent text, where a reference to \u2018the factor\n(k \u2212r/2)\u2019 had to be changed to \u2018the factor (r/2 \u2212k)\u2019.)\nSomebody saw an integral sign on that page and asked about the relative merits of\nZ a\n\u2212\u221e\nf(x) dx\nversus other notations like\na\nZ\n\u2212\u221e\nf(x) dx\nx=a\nZ\nx=\u2212\u221e\nf(x) dx . Don said that putting limits above and below, instead of at the right, traded vertical space\nfor horizontal space, so it depends on how wide your formulas are. Both forms are used.",
+        "are in four colors. But the excerpts that are shown do capture its expository \ufb02avor. A combination of the ideas from all these solutions would lead to a truly perspicacious\nproof of Sierpi\u00b4nski\u2019s theorem. [\u00a7\uf732\uf731. HOMEWORK: SOLUTIONS\n43]",
+        ". else char error\npointing to a very brief error-reporting module. We looked at a program written by another student who had the temerity to include some\ncomments critical of WEB. Don struck back with the following:\nIt is good practice to use italics for the names of variables when they appear in\ncomments. Let the variables in the module title correspond to the local parameters in the\nmodule itself. According to this student\u2019s comments, his algorithm uses \u2018tail recursion\u2019. This is\nan impressive phrase, helpful in the proper context; but unfortunately that is not\nthe kind of recursion his program uses. However, Don did grant that his exposition was good, and said that it gave a nice intuition\nabout the functions of the modules. We saw a second program by the same student. It had the usual sprinkling of \u201cwicked\nwhiches\u201d\u2014\u2018which\u2019s that should have been \u2018that\u2019s. The purpose of the program was to\n\u201cenforce\u201d the triangle inequality on a table of data that speci\ufb01ed the distances between\npairs of large cities in the US. Don commented here that his project (from which these\nprograms came) intends to publish interesting data sets so that researchers in di\ufb00erent\nplaces can replicate each other\u2019s results. He also observed that a program running on a\ntable of \u201creal data,\u201d as here (the actual \u201co\ufb03cial\u201d distances between the cities in question)\nis a lot more interesting than the same program running on \u201crandom data.\u201d Returning to\nthe nitty-gritty of the program, Don observed that the student had made a good choice of\nvariable names\u2014for instance \u2018villains\u2019 for those parts of the data that were causing incon-\nsistencies. This \ufb01tted in nicely with the later exposition; he could talk about \u2018cut throats\u2019\nand so forth. (Don added that we nearly always \ufb01nd villainy pretty unamusing in real life,\n[26\n\u00a7\uf731\uf732. LITERATE PROGRAMMING (2)]"
+      ],
+      "reference": "To enhance the robustness of our findings, it is essential to incorporate multiple experimental runs and report on the variability in outcomes. Specifically: (1) Conduct the heuristic multiple times (such as 20 runs) on each Solomon benchmark instance to capture performance variability, (2) Calculate and present both the mean and standard deviation for the travel distance reduction across these runs, (3) Compare the results to established baseline heuristics, employing statistical significance tests (e.g., paired t-test) to substantiate the improvements. For example: 'Our heuristic consistently achieved an average travel distance reduction of 14.7% \u00b1 1.1% (mean \u00b1 std over 20 runs), and significantly outperformed the baseline heuristics with a reduction of 11.5% \u00b1 0.9% (p < 0.05, paired t-test against existing methods).'",
+      "reference_contexts": [
+        "PRESENTING ALGORITHMS]"
+      ]
+    },
+    {
+      "user_input": "We conducted a survey to evaluate the connection between physical activity frequency and psychological well-being among adults. Participants were asked to report their weekly exercise routines and mental health status via a Likert scale. Findings showed a positive correlation between physical activity and enhanced mental well-being scores.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "We looked at some of the results.",
+        ". . . . . . . . . . . . 7\n\u00a7\uf733. An answer to the exercise\n. .",
+        "COMMENTS ON STUDENT ANSWERS (2)]",
+        "COMMENTS ON STUDENT ANSWERS (1)\n9]",
+        "COMMENTS ON STUDENT ANSWERS (2)\n13]",
+        ". . . . . . . . . . . . 73\n\u00a7\uf733\uf735. Mary-Claire van Leunen on Calisthenics (1)\n. .",
+        ". . . . . 81\n\u00a7\uf733\uf737. Comments on student work\n. . . . . . . . . . . . . . . . 89\n\u00a7\uf733\uf738. Mary-Claire van Leunen on Which vs. That\n. . . . . . . . . 93\n\u00a7\uf733\uf739. Mary-Claire van Leunen on Calisthenics (2)\n. .",
+        "What do we like better about\nour own? Before the cameraman could shoo us out of the room, Mary-Claire reminded us once again\nthat these exercises are \u201cvery hard work.\u201d She closed with, \u201cI hope they will serve you as\nwell as they have served me.\u201d\n[80\n\u00a7\uf733\uf735. MARY-CLAIRE VAN LEUNEN ON CALISTHENICS (1)]"
+      ],
+      "reference": "In our analysis, we utilized Pearson's correlation coefficient to examine the relationship. We discovered a correlation coefficient of r = 0.53, p < 0.001, with a 95% confidence interval of [0.43, 0.63]. Prior to conducting the correlation analysis, we verified assumptions of normality and linearity by employing the Shapiro-Wilk test and examining QQ plots. The dataset, referred to as the 'Adult Fitness and Mental Health Survey', comprised responses from 2,000 participants, which provided a robust basis for our findings. These steps ensured the validity and reliability of our results.",
+      "reference_contexts": [
+        "What do we like better about\nour own? Before the cameraman could shoo us out of the room, Mary-Claire reminded us once again\nthat these exercises are \u201cvery hard work.\u201d She closed with, \u201cI hope they will serve you as\nwell as they have served me.\u201d\n[80\n\u00a7\uf733\uf735. MARY-CLAIRE VAN LEUNEN ON CALISTHENICS (1)]"
+      ]
+    },
+    {
+      "user_input": "In our study, we applied a logistic regression model to predict the likelihood of disease onset based on a set of clinical features. The model was trained on a dataset comprising 200 patient records. We evaluated the model's performance using accuracy as the sole metric.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "We looked at some of the results.",
+        ". data must . . .",
+        ". using 4.3(below) we derive . . .",
+        ". several possible of values of the variable n . .",
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        ". of \u201cnonincreasing\u201d vectors:\nAn = {(a1, . . . , an) \u2208N n | a1 \u2265\u00b7 \u00b7 \u00b7 \u2265an} . (1)\nIf C and P are subsets of N n, let:\nL(C, P) = . .",
+        ". , cn). We know that the\ncomponents of this vector satisfy c1 \u2265\u00b7 \u00b7 \u00b7 \u2265cn, because C \u2286An. Now (c1, . . . , cn)+k(b1, . . . , bn) is an element of L(C, P) for all k \u22650, and by hypoth-\nesis it must therefore be an element of An. But if we take k = ci \u2212cj + 1, we have k \u22651\nand\nci + kbi \u2265cj + kbj,\nhence\nci \u2212cj \u2265k(bj \u2212bi). (3)\nThis is impossible, since ci \u2212cj = k \u22121 is less than k, yet bj \u2212bi \u22651. It follows that\n(b1, . . . , bn) must be an element of An. Note that the hypothesis C \u0338= \u2205is necessary in Lemma 1, for if C is empty the set\nL(C, P) is also empty regardless of P. [This was the \u201cminor slip.\u201d]\nBUT ."
+      ],
+      "reference": "Include a more comprehensive evaluation of the model's performance by adding other relevant metrics such as precision, recall, F1-score, and AUC-ROC. Additionally, provide a comparison with a baseline model, such as a simple decision tree, to contextualize the performance of the logistic regression model. Example: 'The logistic regression model achieved an accuracy of 82%, with a precision of 0.79, recall of 0.81, and F1-score of 0.80. Compared to a decision tree baseline (accuracy 76%, precision 0.75, recall 0.74, F1-score 0.74), the logistic regression model offers improved performance.'",
+      "reference_contexts": [
+        "We looked at some of the results."
+      ]
+    },
+    {
+      "user_input": "In our research, we implemented a logistic regression model to assess the probability of developing a cardiovascular condition, utilizing a dataset derived from the Framingham Heart Study. The model was trained on 200 participants' data and evaluated exclusively using accuracy.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "We looked at some of the results.",
+        ". using 4.3(below) we derive . . .",
+        ". data must . . .",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        "PRESENTING ALGORITHMS]",
+        "She took the technique on faith for ten years and then wrote a\n[\u00a7\uf733\uf735. MARY-CLAIRE VAN LEUNEN ON CALISTHENICS (1)\n79]",
+        "be too opaque. Je\ufb00had to decide whether to spend 20 pages teaching asymptotic\nanalysis in order to spend 5 pages applying its theorems, or whether just to say \u201cIt\ncan be shown that . . . \u201d and refer his readers to another text. In the end he got around\nthe dilemma by doing only the most basic calculations and proving nothing deep. In\ngeneral, keep the level of your exposition down so that you can rely on your readers\nunderstanding it. A couple of tactical remarks:\nState the types of your variables. Talk about \u2018. .",
+        "Understand? Videotapes of the class sessions are kept in the Mathematical & Computer Sciences\nLibrary at Stanford. The preparation of this report was supported in part by NSF grant CCR-8610181."
+      ],
+      "reference": "To provide a more comprehensive evaluation, it is essential to include additional performance metrics such as precision, recall, F1-score, and the Area Under the Receiver Operating Characteristic Curve (AUC-ROC). Moreover, presenting a comparative analysis by introducing a baseline model like a Naive Bayes classifier could further contextualize the logistic regression model's effectiveness. For instance, 'The logistic regression model yielded an accuracy of 84%, complemented by a precision of 0.82, recall of 0.85, and an F1-score of 0.83. In comparison, the Naive Bayes baseline resulted in an accuracy of 78%, with a precision of 0.76, recall of 0.77, and an F1-score of 0.76. These results underscore the logistic regression model's superior performance.'",
+      "reference_contexts": [
+        "We looked at some of the results."
+      ]
+    },
+    {
+      "user_input": "The linear programming model was solved using CPLEX: The solver was run with default parameters. The results showed an optimal solution with an objective value of 345.2. The computational time was observed to be 2.3 seconds.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        ". several possible of values of the variable n . .",
+        "Solution C\n. .",
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        ". . . . . . . . . . . . . . . 22\n\u00a7\uf731\uf732. Literate Programming (2)\n. .",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        "Understand? Videotapes of the class sessions are kept in the Mathematical & Computer Sciences\nLibrary at Stanford. The preparation of this report was supported in part by NSF grant CCR-8610181.",
+        ". holds, the coe\ufb03cients are all zero. Hence\nthe variables are linearly independent.\u201d\nDon pointed out that proof by contradiction is often the easiest way to prove something\nwhen you\u2019re \ufb01rst solving a problem for yourself, but such stream-of-consciousness proofs\ndon\u2019t usually lead to the best exposition. Paul wound up his speech by repeating his opening rules: \u201cDo organize,\u201d and \u201cDo not\ndistract.\u201d\nThe trouble is that it is hard to say what organization is."
+      ],
+      "reference": "Remove unnecessary colons to improve sentence flow and adhere to standard punctuation rules. Specifically: (1) Replace 'using CPLEX:' with 'using CPLEX,', as the colon is not needed to introduce the method. (2) Ensure that colons are only used when introducing a list or a full sentence. The revised sentence should read: 'The linear programming model was solved using CPLEX, and the solver was run with default parameters.'",
+      "reference_contexts": [
+        "PRESENTING ALGORITHMS]"
+      ]
+    },
+    {
+      "user_input": "In our study, we applied the CPLEX solver to optimize the linear programming model, utilizing the standard configurations to ensure consistency across runs: The solver processed the 'RetailDataSet_v2' and identified an optimal solution with an objective value of 354.8. Notably, the computation was completed in a span of just 3.1 seconds.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "Solution C\n. .",
+        ". several possible of values of the variable n . .",
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        "19\u201348. The following points are especially important, in your instructor\u2019s view:\n1. Symbols in di\ufb00erent formulas must be separated by words. Bad: Consider Sq, q < p. Good: Consider Sq, where q < p. 2. Don\u2019t start a sentence with a symbol. Bad: xn \u2212a has n distinct zeroes. Good: The polynomial xn \u2212a has n distinct zeroes. 3.",
+        "Understand? Videotapes of the class sessions are kept in the Mathematical & Computer Sciences\nLibrary at Stanford. The preparation of this report was supported in part by NSF grant CCR-8610181.",
+        ". holds, the coe\ufb03cients are all zero. Hence\nthe variables are linearly independent.\u201d\nDon pointed out that proof by contradiction is often the easiest way to prove something\nwhen you\u2019re \ufb01rst solving a problem for yourself, but such stream-of-consciousness proofs\ndon\u2019t usually lead to the best exposition. Paul wound up his speech by repeating his opening rules: \u201cDo organize,\u201d and \u201cDo not\ndistract.\u201d\nThe trouble is that it is hard to say what organization is."
+      ],
+      "reference": "To enhance clarity and readability, remove unnecessary colons and integrate transitions smoothly. Specifically: (1) Replace 'to ensure consistency across runs:' with 'to ensure consistency across runs,' as the colon is not warranted here. (2) Ensure colons are used correctly, such as when introducing lists or complete sentences. The revised segment should read: '...utilizing the standard configurations to ensure consistency across runs, the solver processed the 'RetailDataSet_v2' and identified an optimal solution with an objective value of 354.8. Remarkably, the computation was completed in just 3.1 seconds.'",
+      "reference_contexts": [
+        "Solution C\n. ."
+      ]
+    },
+    {
+      "user_input": "We applied our novel clustering algorithm to the CIFAR-10 dataset. The algorithm showed remarkable performance and clustered the images with high precision. We used a learning rate of 0.01 and batch size of 32.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "We looked at some of the results.",
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        ". using 4.3(below) we derive . . .",
+        ". of \u201cnonincreasing\u201d vectors:\nAn = {(a1, . . . , an) \u2208N n | a1 \u2265\u00b7 \u00b7 \u00b7 \u2265an} . (1)\nIf C and P are subsets of N n, let:\nL(C, P) = . .",
+        "We spent the rest of class continuing to examine the homework assignment.",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        "19. Capitalize names like Theorem 1, Lemma 2, Algorithm 3, Method 4. [\u00a7\uf731. MINICOURSE ON TECHNICAL WRITING\n3]"
+      ],
+      "reference": "Specify hyperparameter tuning and settings more comprehensively. Specifically: (1) Describe the hyperparameter search space and method (e.g., grid search, random search), (2) Report all relevant hyperparameters and settings (not just learning rate and batch size), (3) Include any specific values chosen after tuning. Example: 'We performed a grid search over the learning rate [0.001, 0.01, 0.1] and batch size [16, 32, 64]. The optimal settings were a learning rate of 0.01, batch size of 32, and weight decay of 0.0001.'",
+      "reference_contexts": [
+        "PRESENTING ALGORITHMS]"
+      ]
+    },
+    {
+      "user_input": "In our recent study, we explored the efficiency of various optimization algorithms. The linear programming model was solved using CPLEX: The solver was run with default parameters. The results showed an optimal solution with an objective value of 345.2. The computational time was observed to be 2.3 seconds. These findings demonstrate the potential for significant improvements in processing speed, which could be beneficial in large-scale applications.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        "Solution C\n. .",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        ". . Don referred to Terry Winograd\u2019s book Language as a Cognitive Process. Algorithms for\nparsing English sentences are there illustrated as charts de\ufb01ning augmented transition net-\nworks or ATN\u2019s\u2014nodes correspond to internal states, edges are transitions between states\nand correspond to individual words. Winograd also has a nice use of nested diagrams\u2014\nboxes within boxes\u2014to replace the more traditional tree diagrams. We saw a scattergram of smiley-faces of somewhat indeterminate signi\ufb01cance; a wit in\nSITN projected Don\u2019s amongst them. The idea is that several dimensions of numeric\ndata can be used to control features on these faces; humans are supposedly wired to read\nnuances in facial expressions quite easily. Don showed us a table from his Art of Computer Programming that listed the many,\nmany states of the Caltech elevator. He said he wished that he\u2019d been able to dream up a\ndiagram to capture that example more neatly: A listing of events is the best way he knows\nto convey the essential features of asynchronous processes. The third Volume of this tome does contain a large fold-out illustration comparing the\nperformances of various sort-on-tapes algorithms. Certain subtleties arise from overlaps,\nrewinds, and bu\ufb00ering that tend to elude conventional algorithmic analysis. Don\u2019s diagram\nneatly captures these, and clearly shows that certain sophisticated algorithms\u2014one was\neven patented by its author\u2014are in fact slower than traditional methods. Unanticipated\nrewind times can cause signi\ufb01cant slow-downs, and the chart shows why. [\u00a7\uf731\uf738. ILLUSTRATIONS (1)\n39]",
+        "19\u201348. The following points are especially important, in your instructor\u2019s view:\n1. Symbols in di\ufb00erent formulas must be separated by words. Bad: Consider Sq, q < p. Good: Consider Sq, where q < p. 2. Don\u2019t start a sentence with a symbol. Bad: xn \u2212a has n distinct zeroes. Good: The polynomial xn \u2212a has n distinct zeroes. 3.",
+        "He could\nhave used a speci\ufb01c programming language, but he was afraid that such a choice would\nalienate people (either because they hated the language or because they had no access to\nthe language). So he decided to write his algorithms in English. His Algorithms are presented rather like Theorems with labeled steps; often they have\naccompanying (but very high-level) \ufb02ow charts (a technique he \ufb01rst saw in Russian liter-\nature of the 1950s). The numbered steps have parenthetical remarks that we would call\ncomments; after 1968 these parenthetical remarks are often invariant relations that can be\nused in a formal proof of program correctness. Don has received many letters complimenting him on his approach, but he says it is not\nreally successful. Explaining why, he said, \u201cPeople keep saying, \u2018I\u2019m going to present an\nalgorithm in Knuth\u2019s style,\u2019 and then they completely botch it by ignoring the conventions\nI think are most important. This style must just be a personal style that works for me. So get a personal style that works for you.\u201d In recent papers he has used the pidgin Algol\nstyle introduced by Aho, Hopcroft, and Ullman; but he will not change his style for the\nyet-un\ufb01nished volumes of The Art of Computer Programming because he wants to keep\nthe entire series consistent. Don says that a computer program is a piece of literature. (\u201cI look forward to the day\nwhen a Pulitzer Prize will be given for the best computer program of the year.\u201d)\nHe\nsays that, apart from the bene\ufb01t to be gained for the readers of our programs, he \ufb01nds\nthat treating programs in this manner actually helps to make them run smoothly on the\ncomputer. (\u201cBecause you get it right when you have to think about it that way.\u201d)\nHe gave us a reprint of \u201cProgramming Pearls\u201d by Jon Bentley, from Communications of\nthe ACM 29 (May 1986), pages 364\u2013369, and told us we had best read it by Wednesday\nsince it will be an important topic of discussion. Don, who was \u2018guest oyster\u2019 for this",
+        "Next came a tricky question of tenses. \u201cGabow and Tarjan[Gab83] show that for many\nalgorithms that had such a multiplicative factor in their worst-case complexities, the mul-\ntiplicative term can be removed.\u201d Here \u2018had\u2019 should be \u2018have\u2019; an algorithm lives forever,\nand its worst-case complexity is a timeless fact about it. However, the problem solved\nby an algorithm can have di\ufb00erent known complexities at di\ufb00erent times; therefore \u2018had\u2019\nwould be okay if \u2018algorithms\u2019 were \u2018problems\u2019. (The quoted sentence also exhibits other\nanomalies. A \u2018multiplicative factor\u2019 is not also a \u2018multiplicative term\u2019; factors are multi-\nplied, terms are added. Also the logic of the sentence can be unwound to make the point\nclearer: \u201cGabow and Tarjan have shown how to improve the algorithms by removing such\na multiplicative factor from the worst-case complexities in many cases [Gab83].\u201d)\nWe talked about abbreviations for bibliographic references. Don didn\u2019t like the lack of\nspace before the bracket in \u201c. ."
+      ],
+      "reference": "The excerpt still overuses colons. While the overall structure of the text is mostly good, the colon used in 'The linear programming model was solved using CPLEX:' is unnecessary and should be removed to improve clarity and adhere to proper punctuation guidelines.",
+      "reference_contexts": [
+        "PRESENTING ALGORITHMS]"
+      ]
+    },
+    {
+      "user_input": "The linear programming model was solved using CPLEX. The solver, which was run with default parameters, resulted in an optimal solution: the objective value was 345.2. Computational time observed to be 2.3 seconds.",
+      "response": "No issues found",
+      "retrieved_contexts": [
+        "Solution C\n. .",
+        ". several possible of values of the variable n . .",
+        "PRESENTING ALGORITHMS]",
+        ". . . . . . . . . . . . . . . . . 19\n\u00a7\uf731\uf730. Presenting algorithms\n. .",
+        ". . . . . . . . . . . . . . . 22\n\u00a7\uf731\uf732. Literate Programming (2)\n. .",
+        "Good: Method 2 is illustrated in Fig. 1; it requires 17 passes. The count was\nincreased by 2. The leftmost 2 in the sequence was changed to a 1.",
+        "\u00a7\uf731\uf739. Excerpts from class, November 6\n[notes by TLL]\nWe spent the \ufb01rst half of class examining the solutions to a homework assignment (see \u00a7\uf732\uf730\nbelow). Don says that the solutions were surprisingly good (see \u00a7\uf732\uf731). One of the proofs described in that section contains illustrations in four colors. Don says\nthat color can be used e\ufb00ectively in talks, but usually not in papers (for that matter,\nLeslie Lamport says that proofs should never be presented in talks, but only in papers). Technical illustrations, even without four colors, cause no end of trouble: Don says that\nthe amount of work involved in preparing a paper for publication is proportional to the\ncube of the number of illustrations. But they are indispensable in many cases. Don showed us several of the illustrations, charts, and tables from The Art of Computer\nProgramming, Volume 3, and recounted the di\ufb03culties in choosing clear methods of pre-\nsenting his ideas. He also mentioned some technical and artistic problems that he had with\nan illustration: At what angle should the truncated octahedron on page 13 be displayed? His books contain some numerical tables (\u201cwhich are sometimes thought to be unenlight-\nening\u201d); Don says that they can sometimes present ideas that can\u2019t be demonstrated\ngraphically (such as numbers oscillating about 2 with period 2\u03c0, page 41). Diagrams with\naccompanying text are also used. Don made sure that the \ufb01nal text was arranged opposite\nthe diagrams to which it refers. The book contains a running example of how 16 particular numbers are sorted by dozens\nof di\ufb00erent algorithms. Each algorithm leads to a di\ufb00erent graphical presentation of the\nsorting activities on those numbers (pages 77, 82, 84, 97, 98, 106, 110, 113, 115, 124, 140,\n143, 147, 151, 161, 165, 166, 172, 175, 205, 251, 253, 254, 359). \u00a7\uf732\uf730. A Homework Problem\nThe Appendix to Gillman\u2019s book takes a paper that has horrible notation and simpli\ufb01es\nit greatly. Your assignment is to take Gillman\u2019s simpli\ufb01cation and produce something",
+        ". holds, the coe\ufb03cients are all zero. Hence\nthe variables are linearly independent.\u201d\nDon pointed out that proof by contradiction is often the easiest way to prove something\nwhen you\u2019re \ufb01rst solving a problem for yourself, but such stream-of-consciousness proofs\ndon\u2019t usually lead to the best exposition. Paul wound up his speech by repeating his opening rules: \u201cDo organize,\u201d and \u201cDo not\ndistract.\u201d\nThe trouble is that it is hard to say what organization is."
+      ],
+      "reference": "In the rewritten text, the use of the colon after 'optimal solution:' is subtle but unnecessary. The phrase following the colon completes the preceding sentence, so a colon isn't warranted here.",
+      "reference_contexts": [
+        "PRESENTING ALGORITHMS]"
+      ]
+    }
+  ]
+}

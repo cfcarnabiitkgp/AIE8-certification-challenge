@@ -51,6 +51,7 @@ Return evolved example in same JSON format:
         "prompt_template": """
 Given this example:
 Question: {reference_question}
+Context: {reference_context}
 Answer: {reference_answer}
 
 Create a variant with MORE SPECIFIC reference answer:
@@ -58,12 +59,13 @@ Create a variant with MORE SPECIFIC reference answer:
 - Provide concrete examples of fixes
 - Reference specific metrics, methods, terminology
 - Make it highly pedagogical (teaches good writing/rigor)
+- Maintain the reference_context (guideline) to ensure grounding
 
 Example of improvement:
 ❌ Before: "Be more specific about the results."
 ✅ After: "Replace 'good results' with specific metrics. For example: 'Our model achieved 94.2% accuracy (±0.3%) and 91.7% F1-score on the test set.'"
 
-Return evolved example in same JSON format with the improved reference_answer.
+Return evolved example in same JSON format with the improved reference_answer and keep the reference_context unchanged.
 """
     },
 
@@ -72,15 +74,29 @@ Return evolved example in same JSON format with the improved reference_answer.
         "prompt_template": """
 Given this flawed excerpt:
 Question: {reference_question}
+Context: {reference_context}
 Issue: {issue_type}
 
 Create a variant with DISTRACTORS:
-- Add 1-2 sentences of CORRECT, clear content before/after the flaw
+- MODIFY the reference_question by adding 1-2 sentences of CORRECT, clear content before/after the flaw
 - The flaw should still be present but embedded in mostly-good text
 - Tests if the agent can identify the specific issue amid good content
 - Makes it more realistic (real papers mix good and bad)
+- Keep the reference_context (guideline) unchanged
+- Update the reference_answer to account for the added distractors
 
-Return evolved example with the flaw still clearly identifiable in same JSON format.
+IMPORTANT: The reference_question MUST be different from the input (it should have additional content).
+
+Return evolved example with the flaw still clearly identifiable in same JSON format:
+{{
+    "reference_question": "The MODIFIED text with distractors added...",
+    "reference_context": "{reference_context}",
+    "reference_answer": "Updated answer addressing the flaw in the new context...",
+    "issue_type": "{issue_type}",
+    "severity": "...",
+    "domain": "...",
+    "section_type": "..."
+}}
 """
     },
 
@@ -89,17 +105,30 @@ Return evolved example with the flaw still clearly identifiable in same JSON for
         "prompt_template": """
 Given this example:
 Question: {reference_question}
+Context: {reference_context}
 Issue: {issue_type}
 
 Create a MORE SUBTLE variant:
-- Make the violation borderline (not obvious)
+- MODIFY the reference_question to make the violation borderline (not obvious)
 - Use context-dependent ambiguity
 - Example: "It improved performance" where "It" is somewhat inferrable but still unclear
 - Tests if agent catches subtle issues vs only obvious ones
+- Keep the reference_context (guideline) unchanged
+- Update the reference_answer to match the new subtle issue
 
+IMPORTANT: The reference_question MUST be different from the input (rewritten to be more subtle).
 The issue should still exist, but be harder to detect.
 
-Return evolved example in same JSON format.
+Return evolved example in same JSON format:
+{{
+    "reference_question": "The REWRITTEN text with subtle issue...",
+    "reference_context": "{reference_context}",
+    "reference_answer": "Updated answer addressing the subtle flaw...",
+    "issue_type": "{issue_type}",
+    "severity": "...",
+    "domain": "...",
+    "section_type": "..."
+}}
 """
     },
 
@@ -108,6 +137,7 @@ Return evolved example in same JSON format.
         "prompt_template": """
 Given this example with one issue:
 Question: {reference_question}
+Context: {reference_context}
 Issue: {issue_type}
 
 Create a variant with MULTIPLE issues:
@@ -115,9 +145,11 @@ Create a variant with MULTIPLE issues:
 - Add 1-2 MORE related issues (for clarity: vague language + undefined term, for rigor: missing baseline + no statistical test)
 - Make it realistic (issues often co-occur in real papers)
 - The agent should ideally identify ALL issues
+- Keep the reference_context (guideline) unchanged, as it should still be relevant to all combined issues
 
 Return evolved example with:
 - reference_question: Section with multiple issues
+- reference_context: Keep unchanged
 - reference_answer: Suggestions addressing ALL issues (can be a combined text)
 - issue_type: Keep the primary issue type (metadata only)
 """
@@ -128,6 +160,7 @@ Return evolved example with:
         "prompt_template": """
 Given this example from {current_domain}:
 Question: {reference_question}
+Context: {reference_context}
 Issue: {issue_type}
 
 Create a variant in a DIFFERENT domain:
@@ -135,6 +168,7 @@ Create a variant in a DIFFERENT domain:
 - Keep the same clarity/rigor issue type
 - Use appropriate terminology and writing style for that domain
 - Ensure the issue and fix remain valid in the new domain
+- Keep the reference_context (guideline) unchanged, as the underlying writing principle applies across domains
 
 Return evolved example in the new domain in same JSON format.
 Update the "domain" field to the new domain.

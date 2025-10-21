@@ -1,0 +1,8 @@
+{
+  "retriever_config": "clarity_bm25_k8",
+  "faithfulness": 0.3,
+  "answer_relevancy": 0.0,
+  "context_precision": 0.0,
+  "context_recall": 0.0,
+  "context_f1": 0.0
+}

@@ -1,0 +1,8 @@
+{
+  "retriever_config": "rigor_naive_k10",
+  "faithfulness": 0.0,
+  "answer_relevancy": 0.7436146637737095,
+  "context_precision": 0.23000000000000004,
+  "context_recall": 1.0,
+  "context_f1": 0.36017316017316026
+}

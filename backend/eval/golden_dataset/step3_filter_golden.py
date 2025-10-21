@@ -117,6 +117,8 @@ def select_diverse_top_n(scored_candidates: list, n: int = 10) -> list:
     """
     Select top N candidates ensuring diversity in issue types and domains.
 
+    Also ensures no duplicate reference_questions in the final selection.
+
     Args:
         scored_candidates: List of scored candidates (sorted by score)
         n: Number to select
@@ -127,6 +129,7 @@ def select_diverse_top_n(scored_candidates: list, n: int = 10) -> list:
     selected = []
     issue_types_seen = set()
     domains_seen = set()
+    reference_questions_seen = set()
 
     for candidate in scored_candidates:
         if len(selected) >= n:
@@ -134,6 +137,12 @@ def select_diverse_top_n(scored_candidates: list, n: int = 10) -> list:
 
         issue_type = candidate.get('issue_type', 'unknown')
         domain = candidate.get('domain', 'general')
+        ref_question = candidate.get('reference_question', '').strip()
+
+        # CRITICAL: Skip if we've already seen this reference_question
+        if ref_question in reference_questions_seen:
+            print(f"    ⚠️  Skipping duplicate reference_question: {ref_question[:80]}...")
+            continue
 
         # Compute diversity bonus
         diversity_bonus = 0.0
@@ -149,6 +158,7 @@ def select_diverse_top_n(scored_candidates: list, n: int = 10) -> list:
         selected.append(candidate)
         issue_types_seen.add(issue_type)
         domains_seen.add(domain)
+        reference_questions_seen.add(ref_question)
 
     # Re-sort by final score
     selected.sort(key=lambda x: x['final_score'], reverse=True)

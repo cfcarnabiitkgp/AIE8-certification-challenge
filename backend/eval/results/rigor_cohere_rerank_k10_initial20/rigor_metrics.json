@@ -1,0 +1,8 @@
+{
+  "retriever_config": "rigor_cohere_rerank_k10_initial20",
+  "faithfulness": 0.0,
+  "answer_relevancy": 0.7436442471245932,
+  "context_precision": 0.41,
+  "context_recall": 0.9,
+  "context_f1": 0.2696969696969697
+}
