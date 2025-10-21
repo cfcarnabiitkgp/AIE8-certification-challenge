@@ -1,6 +1,8 @@
-# Research Paper Peer Review System
+# Peerly: An Agentic Co-Reviewer for Technical Paper Writing
 
-An AI-powered, web-based multi-agentic system for real-time peer review of technical research papers. Built with FastAPI, LangGraph, Next.js, and Qdrant, this application provides Grammarly-style suggestions tailored for academic research writing in mathematics, computer science, and related domains.
+Peerly is a web-based multi-agentic system for co-reviewing technical research paper contents. Built with FastAPI, LangGraph, Next.js, and Qdrant, this application provides Grammarly-style suggestions tailored for academic research writing in mathematics, computer science, and related domains.
+
+Loom video description of the app [here](https://www.loom.com/share/4198ee90231e487b964ec0bae21b7522?sid=2169ad2a-d40c-4ad2-b910-d825819c3698).
 
 ## 🎯 Features
 
