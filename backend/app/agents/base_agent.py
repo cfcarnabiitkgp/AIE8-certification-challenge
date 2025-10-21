@@ -3,11 +3,12 @@ from abc import abstractmethod
 import logging
 import json
 import uuid
-from typing import Dict, Any, Optional, Type, TypeVar
+from typing import Dict, Any, Optional, Type, TypeVar, List, Tuple
 
 from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+from langchain_core.tools import BaseTool
 from app.config import settings
 
 logger = logging.getLogger(__name__)
@@ -139,6 +140,58 @@ class BaseReviewerAgent:
         except Exception as e:
             logger.error(f"{self.agent_name} Structured LLM invocation error: {e}")
             return None
+
+    async def _invoke_llm_with_tools(
+        self,
+        prompt: ChatPromptTemplate,
+        tools: List[BaseTool],
+        response_model: Optional[Type[T]] = None,
+        **kwargs
+    ) -> Tuple[Optional[Any], List[Dict[str, Any]]]:
+        """
+        Invoke LLM with tool calling support (function calling).
+
+        This method enables the LLM to call external tools (like Tavily search)
+        when it determines additional information is needed.
+
+        Args:
+            prompt: ChatPromptTemplate to use
+            tools: List of LangChain tools available to the LLM
+            response_model: Optional Pydantic model for structured output
+            **kwargs: Variables to format the prompt
+
+        Returns:
+            Tuple of (response_content, tool_calls):
+                - response_content: LLM response or structured model instance
+                - tool_calls: List of tool call dictionaries made by the LLM
+        """
+        try:
+            # Bind tools to LLM
+            llm_with_tools = self.llm.bind_tools(tools)
+
+            # Invoke LLM with tools available
+            messages = prompt.format_messages(**kwargs)
+            response = await llm_with_tools.ainvoke(messages)
+
+            # Extract tool calls if any
+            tool_calls = []
+            if hasattr(response, 'tool_calls') and response.tool_calls:
+                tool_calls = response.tool_calls
+                logger.info(
+                    f"{self.agent_name} requested {len(tool_calls)} tool call(s)"
+                )
+
+            # If structured output is requested and no tool calls, parse response
+            if response_model and not tool_calls:
+                structured_llm = self.llm.with_structured_output(response_model)
+                structured_response = await structured_llm.ainvoke(messages)
+                return structured_response, tool_calls
+
+            return response, tool_calls
+
+        except Exception as e:
+            logger.error(f"{self.agent_name} Tool-enabled LLM invocation error: {e}")
+            return None, []
 
     def _parse_json_response(
         self,

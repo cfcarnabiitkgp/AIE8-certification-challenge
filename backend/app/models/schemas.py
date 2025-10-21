@@ -1,10 +1,10 @@
 """Pydantic schemas for request/response validation."""
 from pydantic import BaseModel, Field
+from enum import Enum
+import operator
 from typing import List, Optional, Literal, TypedDict
 from typing_extensions import Annotated
-from enum import Enum
 from langgraph.graph import add_messages
-import operator
 
 
 class DocType(str, Enum):
@@ -106,6 +106,10 @@ class RigorIssue(BaseModel):
     issue: str = Field(..., description="What rigor issue was found")
     suggestion: str = Field(..., description="Specific improvement recommendation")
     severity: SeverityLevel = Field(..., description="Severity level")
+    external_sources: List[str] = Field(
+        default_factory=list,
+        description="URLs from external searches (e.g., Tavily) that support this rigor assessment"
+    )
 
 
 class RigorAnalysisResponse(BaseModel):

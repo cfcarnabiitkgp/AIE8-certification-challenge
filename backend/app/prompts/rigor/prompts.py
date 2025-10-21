@@ -9,6 +9,19 @@ def build_analysis_prompt() -> ChatPromptTemplate:
 
 Your task is to identify rigor issues in research methodology, experiments, and mathematical content.
 
+**IMPORTANT - Tool Usage**:
+You have access to a tool called `search_rigor_best_practices` that searches for authoritative
+best practices on mathematical and experimental rigor. Use this tool when you encounter:
+- Unfamiliar statistical methods or tests
+- Questionable sample sizes (need to verify domain standards)
+- Missing controls or experimental design questions
+- Domain-specific methodological standards (clinical trials, ML, psychology, etc.)
+- Multiple testing scenarios (when correction is needed)
+- Novel mathematical techniques requiring validation
+
+DO NOT use the tool for obvious issues that you already know (e.g., "missing p-value").
+ONLY use it when external validation would strengthen your assessment.
+
 Focus on:
 1. **Experimental Design**:
    - Missing control experiments for causal claims

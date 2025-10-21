@@ -49,11 +49,32 @@ class LangGraphReviewController:
         self.clarity_retriever = self._create_agent_retriever("clarity", DocType.CLARITY)
         self.rigor_retriever = self._create_agent_retriever("rigor", DocType.RIGOR)
 
+        # Initialize Tavily tool for Rigor Agent (if enabled)
+        self.tavily_tool = None
+        if settings.is_tavily_enabled:
+            try:
+                from app.services.tavily_service import TavilyService
+                tavily_service = TavilyService(
+                    api_key=settings.tavily_api_key,
+                    search_depth=settings.tavily_search_depth,
+                    max_results=settings.tavily_max_results
+                )
+                self.tavily_tool = tavily_service.create_search_tool()
+                logger.info("[LangGraph] Tavily search tool initialized for Rigor Agent")
+            except Exception as e:
+                logger.warning(f"[LangGraph] Failed to initialize Tavily: {e}")
+                logger.info("[LangGraph] Rigor Agent will use LLM knowledge only")
+        else:
+            logger.info("[LangGraph] Tavily disabled - Rigor Agent will use LLM knowledge only")
+
         # Initialize components
         self.section_analyzer = SectionAnalyzer()
         self.clarity_agent = ClarityAgent(retriever=self.clarity_retriever)
-        self.rigor_agent = RigorAgent(retriever=self.rigor_retriever)
-        
+        self.rigor_agent = RigorAgent(
+            retriever=self.rigor_retriever,
+            tavily_tool=self.tavily_tool
+        )
+
         self.orchestrator_llm = ChatOpenAI(
             model=settings.orchestrator_model,
             temperature=0.1,

@@ -47,7 +47,7 @@ class SectionAnalyzer:
         """
         all_sections = []
         lines = content.split('\n')
-        current_section_dict = {}x
+        current_section_dict = {}
         line_num = 0
 
         for line in lines:

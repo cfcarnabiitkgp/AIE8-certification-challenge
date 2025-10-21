@@ -6,6 +6,8 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, FieldCondition, MatchValue
 from langchain_openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain.schema import Document
 from app.config import settings
 from app.models.schemas import DocType
 
@@ -24,7 +26,7 @@ class VectorStoreService:
         )
         self.embeddings = OpenAIEmbeddings(
             model=settings.embedding_model,
-            openai_api_key=settings.openai_api_key
+            openai_api_key=settings.openai_api_key,
         )
         self.collection_name = settings.qdrant_collection_name
         self._ensure_collection()
@@ -175,9 +177,87 @@ class VectorStoreService:
             logger.error("Error in similarity search: %s", e)
             return []
     
+    def _create_text_splitter(self):
+        """
+        Create text splitter based on chunking strategy in config.
+
+        Returns:
+            Text splitter instance (RecursiveCharacterTextSplitter or SemanticChunker)
+        """
+        if settings.chunking_strategy == "semantic":
+            logger.info("Using SEMANTIC chunking strategy")
+            logger.info(f"  - Breakpoint type: {settings.semantic_breakpoint_threshold_type}")
+            logger.info(f"  - Breakpoint threshold: {settings.semantic_breakpoint_threshold_amount}")
+
+            return SemanticChunker(
+                embeddings=self.embeddings,
+                breakpoint_threshold_type=settings.semantic_breakpoint_threshold_type,
+                breakpoint_threshold_amount=settings.semantic_breakpoint_threshold_amount,
+            )
+        else:
+            logger.info("Using FIXED-SIZE chunking strategy")
+            logger.info(f"  - Chunk size: {settings.fixed_chunk_size}")
+            logger.info(f"  - Overlap: {settings.fixed_chunk_overlap}")
+
+            return RecursiveCharacterTextSplitter(
+                chunk_size=settings.fixed_chunk_size,
+                chunk_overlap=settings.fixed_chunk_overlap,
+                length_function=len,
+                separators=["\n\n", "\n", " ", ""]
+            )
+
+    def _enforce_chunk_size_limits(self, chunks: List[Document]) -> List[Document]:
+        """
+        Enforce min/max chunk size limits for semantic chunking.
+
+        For chunks exceeding max_size, split them using recursive splitter.
+        For chunks below min_size, merge with adjacent chunks if possible.
+
+        Args:
+            chunks: List of document chunks
+
+        Returns:
+            List of size-constrained chunks
+        """
+        if settings.chunking_strategy != "semantic":
+            return chunks  # Only apply to semantic chunks
+
+        min_size = settings.semantic_min_chunk_size
+        max_size = settings.semantic_max_chunk_size
+
+        processed_chunks = []
+
+        for chunk in chunks:
+            chunk_len = len(chunk.page_content)
+
+            # If chunk is too large, split it
+            if chunk_len > max_size:
+                logger.debug(f"Splitting large chunk ({chunk_len} chars) into smaller pieces")
+                fallback_splitter = RecursiveCharacterTextSplitter(
+                    chunk_size=max_size,
+                    chunk_overlap=200,
+                    length_function=len,
+                    separators=["\n\n", "\n", " ", ""]
+                )
+                sub_chunks = fallback_splitter.split_documents([chunk])
+                processed_chunks.extend(sub_chunks)
+
+            # If chunk is too small, still keep it (better than discarding)
+            # Merging with adjacent chunks would break semantic boundaries
+            elif chunk_len < min_size:
+                logger.debug(f"Small chunk ({chunk_len} chars) kept as-is to preserve semantic boundary")
+                processed_chunks.append(chunk)
+
+            else:
+                processed_chunks.append(chunk)
+
+        return processed_chunks
+
     async def process_pdf(self, pdf_path: str, metadata: Optional[dict] = None) -> int:
         """
         Process a PDF file and add it to the vector store using PyMuPDF.
+
+        Uses chunking strategy from config (semantic or fixed-size).
 
         Args:
             pdf_path: Path to the PDF file
@@ -193,14 +273,23 @@ class VectorStoreService:
             loader = PyMuPDFLoader(pdf_path)
             documents = loader.load()
 
+            # Create appropriate text splitter based on config
+            text_splitter = self._create_text_splitter()
+
             # Split documents into chunks
-            text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=1000,
-                chunk_overlap=200,
-                length_function=len,
-                separators=["\n\n", "\n", " ", ""]
-            )
             split_docs = text_splitter.split_documents(documents)
+
+            # Enforce size limits for semantic chunks
+            if settings.chunking_strategy == "semantic":
+                split_docs = self._enforce_chunk_size_limits(split_docs)
+
+                # Log chunk size statistics
+                chunk_sizes = [len(doc.page_content) for doc in split_docs]
+                logger.info(f"Semantic chunking stats:")
+                logger.info(f"  - Total chunks: {len(chunk_sizes)}")
+                logger.info(f"  - Avg chunk size: {sum(chunk_sizes) / len(chunk_sizes):.0f} chars")
+                logger.info(f"  - Min chunk size: {min(chunk_sizes)} chars")
+                logger.info(f"  - Max chunk size: {max(chunk_sizes)} chars")
 
             # Extract text and merge metadata
             texts = [doc.page_content for doc in split_docs]
