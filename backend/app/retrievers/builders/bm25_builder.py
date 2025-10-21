@@ -58,21 +58,38 @@ class BM25RetrieverBuilder(RetrieverBuilder):
         # Retrieve all documents for BM25 indexing
         # BM25Retriever needs the full corpus to calculate term statistics
         import asyncio
-        import nest_asyncio
+        from concurrent.futures import ThreadPoolExecutor
 
-        # Allow nested event loops
-        nest_asyncio.apply()
+        def run_async_in_thread():
+            """Run async code in a separate thread with its own event loop."""
+            new_loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(new_loop)
+            try:
+                return new_loop.run_until_complete(
+                    vector_store.get_all_documents(doc_type=config.get("doc_type"))
+                )
+            finally:
+                new_loop.close()
 
-        # Fetch all documents with optional doc_type filter
+        # Try to get documents using the current event loop if possible
         try:
-            loop = asyncio.get_event_loop()
+            # Check if there's a running event loop
+            loop = asyncio.get_running_loop()
+            # We're in an async context - run in a thread to avoid event loop issues
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(run_async_in_thread)
+                documents = future.result()
         except RuntimeError:
+            # No running loop - we can create one directly
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
-
-        documents = loop.run_until_complete(
-            vector_store.get_all_documents(doc_type=config.get("doc_type"))
-        )
+            try:
+                documents = loop.run_until_complete(
+                    vector_store.get_all_documents(doc_type=config.get("doc_type"))
+                )
+            finally:
+                loop.close()
+                asyncio.set_event_loop(None)
 
         if not documents:
             logger.warning(
