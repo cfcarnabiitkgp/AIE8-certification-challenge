@@ -1,0 +1,9 @@
+{
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "18px"
+  },
+  "flowchart": {
+    "useMaxWidth": false
+  }
+}

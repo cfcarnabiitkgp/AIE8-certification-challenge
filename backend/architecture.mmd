@@ -1,0 +1,102 @@
+graph TB
+    subgraph API["API Layer (FastAPI)"]
+        POST["/api/review POST endpoint"]
+        GET["/api/review/{id} GET endpoint"]
+    end
+
+    subgraph Controller["Orchestration Layer (LangGraph)"]
+        SG["StateGraph Workflow"]
+        RS["ReviewState (Shared State)"]
+
+        subgraph Nodes["Workflow Nodes"]
+            N1["1. parse_sections"]
+            N2["2. analyze_section"]
+            N3["3. next_section"]
+            N4["4. validate_suggestions"]
+        end
+    end
+
+    subgraph Agents["Agent Layer"]
+        SA["SectionAnalyzer<br/>(Parser)"]
+        CA["ClarityAgent<br/>(gpt-4o-mini)<br/>ReAct Pattern"]
+        RA["RigorAgent<br/>(gpt-4o)<br/>ReAct + Tools"]
+        RC["ReviewerController<br/>(gpt-4o)<br/>Orchestrator/Validator"]
+        BA["BaseReviewerAgent<br/>(Abstract)"]
+
+        CA -.inherits.-> BA
+        RA -.inherits.-> BA
+        RC -.inherits.-> BA
+    end
+
+    subgraph Retrieval["Retrieval Layer"]
+        RR["RetrieverRegistry<br/>(Singleton)"]
+
+        subgraph Retrievers["Retriever Strategies"]
+            R1["NaiveRetriever<br/>(Vector Similarity)"]
+            R2["BM25Retriever<br/>(Hybrid Search)"]
+            R3["CohereRerankRetriever<br/>(Reranking)"]
+        end
+
+        RR --> R1
+        RR --> R2
+        RR --> R3
+    end
+
+    subgraph External["External Services"]
+        OAI["OpenAI API<br/>(GPT-4o, GPT-4o-mini)"]
+        QD["Qdrant<br/>(Vector Database)"]
+        TV["Tavily API<br/>(Web Search)"]
+        CO["Cohere API<br/>(Reranking)"]
+    end
+
+    %% API to Controller
+    POST --> SG
+    GET --> SG
+
+    %% Controller workflow
+    SG --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 -->|more sections| N2
+    N3 -->|done| N4
+
+    %% State connections
+    RS -.state.-> N1
+    RS -.state.-> N2
+    RS -.state.-> N3
+    RS -.state.-> N4
+
+    %% Nodes to Agents
+    N1 --> SA
+    N2 --> CA
+    N2 --> RA
+    N4 --> RC
+
+    %% Agents to Retrieval
+    CA --> RR
+    RA --> RR
+
+    %% Retrieval to External
+    R1 --> QD
+    R2 --> QD
+    R3 --> QD
+    R3 --> CO
+
+    %% Agents to External
+    CA --> OAI
+    RA --> OAI
+    RA -.optional.-> TV
+    RC --> OAI
+
+    %% Styling
+    classDef api fill:#e1f5ff,stroke:#01579b,stroke-width:2px
+    classDef controller fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef agent fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px
+    classDef retrieval fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef external fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+
+    class POST,GET api
+    class SG,RS,N1,N2,N3,N4 controller
+    class SA,CA,RA,RC,BA agent
+    class RR,R1,R2,R3 retrieval
+    class OAI,QD,TV,CO external
