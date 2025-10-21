@@ -6,6 +6,12 @@ This script tests the new LangGraph implementation with Pydantic state models.
 import asyncio
 import json
 import time
+import sys
+import os
+
+# Add the backend directory to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+
 from app.agents.review_controller_langgraph import LangGraphReviewController
 
 # Sample research paper for testing
@@ -205,3 +211,4 @@ async def test_langgraph_review():
 
 if __name__ == "__main__":
     asyncio.run(test_langgraph_review())
+

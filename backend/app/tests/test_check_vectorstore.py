@@ -7,6 +7,12 @@ This script verifies:
 - Sample documents from each category
 """
 import asyncio
+import sys
+import os
+
+# Add the backend directory to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+
 from app.services.vector_store import VectorStoreService
 from app.models.schemas import DocType
 
@@ -75,3 +81,4 @@ async def check_vectorstore():
 
 if __name__ == "__main__":
     asyncio.run(check_vectorstore())
+

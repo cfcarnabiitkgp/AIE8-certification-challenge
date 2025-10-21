@@ -12,6 +12,12 @@ Tests the simplified, modular architecture with:
 import asyncio
 import json
 import time
+import sys
+import os
+
+# Add the backend directory to the path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
+
 from app.agents.review_controller import ReviewController
 
 
@@ -168,3 +174,4 @@ async def test_modular_architecture():
 
 if __name__ == "__main__":
     asyncio.run(test_modular_architecture())
+
